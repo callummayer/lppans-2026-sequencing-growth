@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Phasing Map — Workshop Working Sheet</title>
+<style>
+  @page {
+    size: letter landscape;
+    margin: 0.4in;
+  }
+
+  :root {
+    --zzap-white:  #FFFFFF;
+    --zzap-navy:   #01274E;
+    --zzap-blue:   #034F9D;
+    --zzap-slate:  #497CB0;
+    --zzap-pale:   #EAF2FB;
+    --zzap-accent: #116DFF;
+    --zzap-rule:   rgba(1, 39, 78, 0.18);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--zzap-white);
+    color: var(--zzap-navy);
+    font-family: 'Century Gothic', 'CenturyGothic', Jost, 'Avenir Next', Avenir, sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .sheet {
+    width: 100%;
+    min-height: calc(8.5in - 0.8in);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.18in;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: end;
+    padding-bottom: 0.18in;
+    border-bottom: 1px solid var(--zzap-rule);
+  }
+
+  header .left .label {
+    font-size: 9pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--zzap-blue);
+    font-weight: 700;
+    margin-bottom: 0.04in;
+  }
+  header .left h1 {
+    margin: 0;
+    font-size: 20pt;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--zzap-navy);
+  }
+  header .center {
+    font-family: 'Century Gothic', 'CenturyGothic', Jost, 'Avenir Next', sans-serif;
+    text-transform: lowercase;
+    font-weight: 700;
+    font-size: 18pt;
+    color: var(--zzap-navy);
+    letter-spacing: 0.01em;
+  }
+  header .right {
+    text-align: right;
+    font-size: 9pt;
+    color: var(--zzap-slate);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  header .right strong {
+    color: var(--zzap-navy);
+    display: block;
+    font-size: 10pt;
+    margin-bottom: 0.02in;
+  }
+
+  .map-frame {
+    border: 1px solid var(--zzap-rule);
+    background: white;
+    padding: 0.15in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 5.0in;
+  }
+  .map-frame img {
+    max-width: 100%;
+    max-height: 5.6in;
+    width: auto;
+    height: auto;
+    display: block;
+    /* dim slightly so attendees can write over it */
+    opacity: 0.78;
+  }
+
+  .legend {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.25in;
+    padding: 0.2in 0.25in;
+    background: var(--zzap-pale);
+    border-radius: 2px;
+  }
+  .legend .col h3 {
+    margin: 0 0 0.06in 0;
+    font-size: 9pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--zzap-blue);
+    font-weight: 700;
+  }
+  .legend .col p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.35;
+    color: var(--zzap-navy);
+  }
+  .legend .col p strong { color: var(--zzap-navy); }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 8pt;
+    color: var(--zzap-slate);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding-top: 0.12in;
+    border-top: 1px solid var(--zzap-rule);
+  }
+</style>
+</head>
+<body>
+  <div class="sheet">
+
+    <header>
+      <div class="left">
+        <div class="label">Workshop Markup Map · Phases 1 &amp; 2</div>
+        <h1>Southeast Fredericton — Land Use &amp; Phasing</h1>
+      </div>
+      <div class="center">zzap</div>
+      <div class="right">
+        <strong>Table&nbsp;____</strong>
+        Sketch buildings, accesses, mix &amp; scale
+      </div>
+    </header>
+
+    <div class="map-frame">
+      <img src="../deck/assets/new/land-use-plan.jpg" alt="Southeast Fredericton land use plan — Phases 1 and 2 focus; attendees mark on top">
+    </div>
+
+    <div class="legend">
+      <div class="col">
+        <h3>What to sketch</h3>
+        <p><strong>Building footprints</strong> &amp; rough scale. <strong>Primary accesses.</strong> Mark where each <strong>land-use type</strong> lands in Phase 1 and at the Phase 2 Central Node, and roughly at what intensity.</p>
+      </div>
+      <div class="col">
+        <h3>What's fixed</h3>
+        <p>~200 ha · City owns <strong>100% of Phases 1 &amp; 2</strong> · Mixed-use Central Node sits in Phase 2 · Phase 1 = residential plus other uses · Existing services run along the corridor edge.</p>
+      </div>
+      <div class="col">
+        <h3>Your one sentence</h3>
+        <p style="border-bottom: 1px solid var(--zzap-rule); padding-bottom: 0.18in;">What has to be true on the ground before Phase 2 starts?</p>
+      </div>
+    </div>
+
+    <footer>
+      <span>Sequencing Growth · LPPANS 2026 · Connor Wallace + Sarah Young</span>
+      <span>engagefredericton.ca/southeastsecondaryplan</span>
+    </footer>
+  </div>
+</body>
+</html>

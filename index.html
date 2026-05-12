@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sequencing Growth — LPPANS 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap">
+<style>
+  :root {
+    --zzap-white:  #FFFFFF;
+    --zzap-navy:   #01274E;
+    --zzap-blue:   #034F9D;
+    --zzap-accent: #116DFF;
+    --zzap-slate:  #497CB0;
+    --zzap-pale:   #EAF2FB;
+    --zzap-rule:   rgba(1, 39, 78, 0.15);
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--zzap-pale);
+    color: var(--zzap-navy);
+    font-family: 'Century Gothic', 'CenturyGothic', Jost, 'Avenir Next', Avenir, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+  header {
+    border-bottom: 1px solid var(--zzap-rule);
+    padding-bottom: 28px;
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--zzap-accent);
+    margin: 0 0 14px;
+  }
+  h1 {
+    font-size: 38px;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    color: var(--zzap-navy);
+  }
+  .lede {
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--zzap-slate);
+    max-width: 60ch;
+    margin: 0;
+  }
+  .meta {
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--zzap-slate);
+    text-transform: uppercase;
+    margin-top: 24px;
+  }
+  .meta strong { color: var(--zzap-navy); }
+
+  .group {
+    margin-top: 44px;
+  }
+  .group h2 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--zzap-blue);
+    margin: 0 0 16px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .card {
+    background: white;
+    border-left: 4px solid var(--zzap-accent);
+    padding: 22px 26px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(1, 39, 78, 0.06);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(1, 39, 78, 0.10);
+  }
+  .card .row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .card h3 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--zzap-navy);
+    letter-spacing: -0.01em;
+  }
+  .card .kind {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--zzap-slate);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .card p {
+    margin: 8px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--zzap-slate);
+  }
+  .card .open {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--zzap-accent);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .card .open::after {
+    content: ' →';
+  }
+
+  footer {
+    border-top: 1px solid var(--zzap-rule);
+    margin-top: 56px;
+    padding-top: 22px;
+    font-size: 12px;
+    color: var(--zzap-slate);
+    letter-spacing: 0.04em;
+  }
+  footer a {
+    color: var(--zzap-accent);
+    text-decoration: none;
+  }
+  footer a:hover { text-decoration: underline; }
+  .feedback {
+    background: white;
+    border-left: 4px solid var(--zzap-navy);
+    padding: 18px 22px;
+    border-radius: 4px;
+    margin-top: 28px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--zzap-navy);
+  }
+  .feedback strong { color: var(--zzap-accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">LPPANS 2026 · Bridging Ideas, Places, People</p>
+    <h1>Sequencing Growth</h1>
+    <p class="lede">Implementing the initial phases of a secondary plan in Fredericton's Southeast neighbourhood.</p>
+    <p class="meta">
+      <strong>May 15, 2026 · 10:00–10:45 AM</strong>
+      &nbsp;·&nbsp; Lord Nelson Hotel, Halifax
+      &nbsp;·&nbsp; Connor Wallace + Sarah Young
+    </p>
+  </header>
+
+  <section class="group">
+    <h2>Presentation</h2>
+    <div class="cards">
+      <a class="card" href="deck/index.html">
+        <div class="row">
+          <h3>Slide deck</h3>
+          <span class="kind">Reveal.js · 13 slides · ~12 min</span>
+        </div>
+        <p>Title, project overview, the team, engagement, three challenges, phasing, workshop intro, prompts.</p>
+        <span class="open">Open the deck</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="group">
+    <h2>Workshop materials (~33 min, hands-on)</h2>
+    <div class="cards">
+      <a class="card" href="workshop/table-prompts.html">
+        <div class="row">
+          <h3>Table prompt card</h3>
+          <span class="kind">2-sided · Letter</span>
+        </div>
+        <p>Scenario on Side A, five prompts on Side B. One per table.</p>
+        <span class="open">Open prompt card</span>
+      </a>
+      <a class="card" href="workshop/phasing-map.html">
+        <div class="row">
+          <h3>Phasing markup sheet</h3>
+          <span class="kind">Letter landscape</span>
+        </div>
+        <p>Dimmed land-use plan for attendees to sketch buildings, accesses, mix, and scale on top.</p>
+        <span class="open">Open markup sheet</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="group">
+    <h2>Leave-behind</h2>
+    <div class="cards">
+      <a class="card" href="leave-behind/leave-behind.html">
+        <div class="row">
+          <h3>One-page summary</h3>
+          <span class="kind">Letter · take-home</span>
+        </div>
+        <p>What attendees take with them — project at a glance, the three challenges, sequencing logic, links.</p>
+        <span class="open">Open leave-behind</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="feedback">
+    <strong>For review:</strong> arrow keys to navigate the deck.
+    Press <code>S</code> on any slide to open speaker notes (delivery script lives in there).
+    Press <code>F</code> for fullscreen. Press <code>ESC</code> for slide overview.
+  </div>
+
+  <footer>
+    zzap Architecture + Planning · Dartmouth, NS &nbsp;·&nbsp;
+    <a href="https://engagefredericton.ca/southeastsecondaryplan">engagefredericton.ca/southeastsecondaryplan</a>
+    &nbsp;·&nbsp;
+    <a href="https://zzap.ca">zzap.ca</a>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Workshop Prompt Card — LPPANS 2026</title>
+<style>
+  @page {
+    size: letter;
+    margin: 0.6in;
+  }
+
+  :root {
+    --zzap-white:  #FFFFFF;
+    --zzap-navy:   #01274E;
+    --zzap-blue:   #034F9D;
+    --zzap-slate:  #497CB0;
+    --zzap-pale:   #EAF2FB;
+    --zzap-accent: #116DFF;
+    --zzap-rule:   rgba(1, 39, 78, 0.18);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--zzap-white);
+    color: var(--zzap-navy);
+    font-family: 'Century Gothic', 'CenturyGothic', Jost, 'Avenir Next', Avenir, sans-serif;
+    font-feature-settings: "kern", "liga", "calt";
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 100%;
+    min-height: calc(11in - 1.2in);
+    padding: 0.1in 0;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--zzap-rule);
+    padding-bottom: 0.2in;
+    margin-bottom: 0.4in;
+    font-size: 10pt;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--zzap-slate);
+  }
+  .meta .mark {
+    font-weight: 700;
+    color: var(--zzap-navy);
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+    font-size: 14pt;
+  }
+
+  /* SIDE A — scenario */
+
+  .side-label {
+    font-size: 11pt;
+    font-weight: 700;
+    color: var(--zzap-blue);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.15in;
+  }
+
+  h1 {
+    font-size: 30pt;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.3in 0;
+    color: var(--zzap-navy);
+    max-width: 6in;
+  }
+
+  .scenario {
+    background: white;
+    border-left: 6px solid var(--zzap-accent);
+    padding: 0.35in 0.4in;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(1,39,78,0.06);
+    margin-bottom: 0.4in;
+  }
+
+  .scenario p {
+    font-size: 14pt;
+    line-height: 1.45;
+    margin: 0 0 0.18in 0;
+    color: var(--zzap-navy);
+  }
+
+  .scenario p:last-child { margin-bottom: 0; }
+
+  .scenario .stage {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--zzap-blue);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.1in;
+  }
+
+  .deliver {
+    background: var(--zzap-pale);
+    padding: 0.3in 0.4in;
+    border-radius: 2px;
+    margin-bottom: 0.3in;
+  }
+  .deliver h3 {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--zzap-blue);
+    margin: 0 0 0.15in 0;
+    font-weight: 700;
+  }
+  .deliver ol {
+    margin: 0;
+    padding: 0 0 0 0.25in;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: var(--zzap-navy);
+  }
+  .deliver ol li {
+    margin-bottom: 0.08in;
+  }
+
+  .footnote {
+    margin-top: auto;
+    font-size: 9pt;
+    color: var(--zzap-slate);
+    border-top: 1px solid var(--zzap-rule);
+    padding-top: 0.18in;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* SIDE B — questions */
+
+  .questions-intro {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: var(--zzap-slate);
+    max-width: 6.2in;
+    margin: 0 0 0.35in 0;
+  }
+
+  .questions-intro strong { color: var(--zzap-navy); }
+
+  .qlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: qcount;
+  }
+
+  .qlist li {
+    counter-increment: qcount;
+    padding: 0.2in 0;
+    border-top: 1px solid var(--zzap-rule);
+    display: grid;
+    grid-template-columns: 0.6in 1fr;
+    column-gap: 0.15in;
+  }
+
+  .qlist li:last-child {
+    border-bottom: 1px solid var(--zzap-rule);
+  }
+
+  .qlist li::before {
+    content: counter(qcount);
+    font-size: 22pt;
+    font-weight: 800;
+    color: var(--zzap-accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .qlist .q-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.06in;
+    padding-top: 0.04in;
+  }
+
+  .qlist .q-body .label {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--zzap-blue);
+    font-weight: 700;
+  }
+
+  .qlist .q-body .text {
+    font-size: 13pt;
+    line-height: 1.4;
+    color: var(--zzap-navy);
+    font-weight: 500;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- SIDE A -->
+<section class="page">
+  <div class="meta">
+    <span>Workshop Prompt · Side A</span>
+    <span class="mark">zzap</span>
+    <span>LPPANS 2026</span>
+  </div>
+
+  <div class="side-label">The Scenario</div>
+  <h1>Sequencing Growth — Phases 1 &amp; 2</h1>
+
+  <div class="scenario">
+    <span class="stage">Set the scene</span>
+    <p>It's 2027. The Southeast Secondary Plan is adopted. Phase 1 servicing is funded. The land-use plan already decides what goes where &mdash; mixed-use node in Phase 2, residential plus other uses in Phase 1.</p>
+    <p>Your table decides <strong>how Phases 1 and 2 actually build out</strong> at a scale that adds up to a complete community.</p>
+  </div>
+
+  <div class="deliver">
+    <h3>What to sketch on the markup map</h3>
+    <ol>
+      <li><strong>Building footprints</strong> &mdash; rough scale, where they cluster, how they front the street.</li>
+      <li><strong>Accesses</strong> &mdash; primary routes in, where active modes connect, where parking lives.</li>
+      <li><strong>The mix</strong> &mdash; mark where each land-use type lands in Phase 1 and at the Phase 2 Central Node, and roughly at what intensity.</li>
+      <li><strong>One sentence</strong> on what triggers Phase 2 &mdash; population, servicing, frontage demand, something else.</li>
+    </ol>
+  </div>
+
+  <div class="footnote">
+    <span>20 minutes &middot; Catalog + Markup map &middot; Pick a reporter</span>
+    <span>Flip the card &rarr;</span>
+  </div>
+</section>
+
+<!-- SIDE B -->
+<section class="page">
+  <div class="meta">
+    <span>Workshop Prompt · Side B</span>
+    <span class="mark">zzap</span>
+    <span>LPPANS 2026</span>
+  </div>
+
+  <div class="side-label">Prompts to anchor the conversation</div>
+  <p class="questions-intro">You don't have to answer all of them. <strong>They're scaffolding</strong> — if your table is circling, pick the prompt that gets it unstuck and start there.</p>
+
+  <ol class="qlist">
+    <li>
+      <div class="q-body">
+        <span class="label">Phase 1, day one</span>
+        <span class="text">Stand at the edge of Phase 1 on move-in morning. What does a resident need within a five-minute walk for this to feel like a neighbourhood and not a subdivision?</span>
+      </div>
+    </li>
+    <li>
+      <div class="q-body">
+        <span class="label">Scale that pencils</span>
+        <span class="text">The Central Node is in Phase 2. What's the smallest viable version of it that can open without sitting empty waiting for residential to catch up?</span>
+      </div>
+    </li>
+    <li>
+      <div class="q-body">
+        <span class="label">Mix without sprawl</span>
+        <span class="text">Phase 1 is residential plus "some other uses." What other uses, where, and at what frontage &mdash; without diluting the Central Node before it opens?</span>
+      </div>
+    </li>
+    <li>
+      <div class="q-body">
+        <span class="label">Walkable from isolation</span>
+        <span class="text">The site has no neighbouring village. Which streets, frontages, or block sizes in Phases 1 and 2 do the most work to discourage car-only living before the rest of the node arrives?</span>
+      </div>
+    </li>
+    <li>
+      <div class="q-body">
+        <span class="label">The trigger</span>
+        <span class="text">What has to be true on the ground for it to be the right moment to move from Phase 1 into Phase 2? Population? Absorption? Servicing milestone? Something else?</span>
+      </div>
+    </li>
+  </ol>
+
+  <div class="footnote" style="margin-top: 0.3in;">
+    <span>Sequencing Growth &middot; Connor Wallace + Sarah Young</span>
+    <span>engagefredericton.ca/southeastsecondaryplan</span>
+  </div>
+</section>
+
+</body>
+</html>

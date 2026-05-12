@@ -1,0 +1,5 @@
+.DS_Store
+.claude/
+.gworkspace-mcp/
+*.zip
+node_modules/
