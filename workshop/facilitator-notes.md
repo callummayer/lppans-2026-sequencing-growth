@@ -6,14 +6,16 @@ Print one copy each. Keep folded in a back pocket. Read it once before the sessi
 
 ## What the workshop is asking (and isn't)
 
-**Not asking:** *where should the mixed-use node go?* The plan already decides that. The Central Node sits in Phase 2; Phase 1 is residential plus other uses. The land-use plan is approved.
+**Not asking:** *where should the mixed-use node go?* The plan already decides that. The Central Node sits in Phase 2; Phase 1 is residential plus other uses. Zoning is settled.
 
-**Asking:** given the plan as approved, **how does this neighbourhood functionally build out** in Phases 1 and 2 at a scale that adds up to a complete community — and not a car-centric subdivision that we try to retrofit later?
+**Asking:** the City owns 100% of Phases 1 and 2 and intends to deliver the infrastructure but **not develop the parcels itself**. Given that — **how does the hand-off to private partners get structured** so the plan's intent (mix, affordability, form, sequencing) actually lands on the ground?
 
-Concretely, tables are working with:
-- **Phase 1** = residential + some other uses. What other uses? Where? At what scale?
-- **Phase 2** = the Central Node activates, plus more residential. What does the smallest viable version of the node look like? What frontage does it need on Alison / Vanier?
-- **The seam** between them — what has to be true on the ground for Phase 2 to open.
+Concretely, tables are working through:
+- **Disposition model** — sale, lease, JV, RFP-with-conditions, land trust. Which mechanism does the work?
+- **The right partner** — what does a first partner for Phase 1 look like, and what would you weight over price?
+- **Conditions in the sale** — what does the disposal agreement carry on top of zoning?
+- **Release sequence** — which parcels go first, second, third, and what triggers each release?
+- **The handoff** — streets, parks, ground-floor commercial, affordable units. Where does the City stop and the partner start?
 
 The exercise rewards thinking, not landing on the plan's actual answer.
 
@@ -21,11 +23,12 @@ The exercise rewards thinking, not landing on the plan's actual answer.
 
 ## What the team actually decided (back-pocket only)
 
-- **Phase 1 opens the corridor edge** — closest to existing servicing and access along Alison Boulevard and the Doak Road frontage. Lower-density residential plus a small share of supporting uses (corner-store-scale, not a centre).
+- **Phase 1 opens the corridor edge** — closest to existing servicing and access along Alison Boulevard and the Doak Road frontage. Lower-density residential plus a small share of supporting uses.
 - **Phase 2 activates the Central Node** alongside continued residential build-out, sequencing the node *with* corridor frontage so it has a working main street from day one rather than waiting in isolation for demand to catch up.
 - **Phases 3 & 4** infill behind the demonstrated demand and the major servicing investment that comes with them, and extend connections back up to Alison Boulevard for future phases on private lands.
 - **Phases 5 & 6** continue infill around the Central Node as the area builds out.
 - **Hatched southeast area** is reserved for a potential provincial public school — fields, gym, basketball courts coming as part of that same investment.
+- **Disposition direction (where the plan landed):** RFP-with-conditions, phased parcel releases tied to servicing milestones, mix and affordability baked into the disposal terms — not left to the market to optimize away.
 
 If a table lands somewhere similar — celebrate it, ask what made them confident. If they land somewhere different but defensible, that's a win — the workshop is about the *thinking*.
 
@@ -33,17 +36,17 @@ If a table lands somewhere similar — celebrate it, ask what made them confiden
 
 ## Three common confusions (redirect these fast)
 
-### 1. "Let's relocate the mixed-use node."
+### 1. "Let's redesign the land-use plan."
 
-The plan already located it. Redirect: *"Given the node lives in Phase 2, what does Phase 1 need to set up for it to work?"*
+The plan and zoning are approved. Redirect: *"Zoning sets the envelope. What does the disposal agreement need to carry on top so the building that gets built is actually what the plan intended?"*
 
-### 2. "Build the node first to attract residents."
+### 2. "Just sell to the highest bidder and let the market figure it out."
 
-Front-loading the node before residential demand exists = vacant ground floors for a decade. Ask: *"Who's the customer for those shops on opening day? Are they here yet?"*
+That's the trap. Public land treated like any other parcel loses the affordability and form-control upside. Ask: *"What does the plan deliver that the market wouldn't, and what condition in the sale protects that?"*
 
-### 3. "Phase based on what's easiest to build."
+### 3. "Release all the parcels at once so it builds faster."
 
-Easiest = flat parcels, services already there, no expropriation. That's a real constraint, but it isn't a phasing strategy — it's a default. Ask: *"If you built only what's easy, what kind of neighbourhood do you end up with in 2046? Walkable, or not?"*
+Front-loading dispositions before servicing is in place — or before there's signal demand is real — leaves the City exposed and the neighbourhood half-built. Ask: *"What's the worst version of this if Phase 1 absorbs slower than you'd hoped?"*
 
 ---
 
@@ -51,29 +54,29 @@ Easiest = flat parcels, services already there, no expropriation. That's a real 
 
 Pick one or two — don't pile them on:
 
-- **Scale check:** *"How many Phase 1 units? Roughly. Is that enough to support any retail at all by Phase 2 opening?"*
-- **Walkability lever:** *"You're a Phase 1 resident on day one. What can you walk to in five minutes? If the honest answer is 'nothing,' what would you change?"*
-- **Affordability lever:** *"100% of Phases 1 and 2 is City-owned. What does a Phase 1 land release look like if you want 20% affordable units? What conditions ride with the parcel?"*
-- **Trigger logic:** *"What's the one thing that has to be true before you start Phase 2? Be specific."*
-- **Reversibility:** *"Phase 1 is built. Phase 2 funding falls through. What's the worst version of this plan?"*
-- **Engagement back to community:** *"Round 2 told us the first phase sets the tone for everything. What does your Phase 1 say to a resident about what this neighbourhood will be?"*
-- **Servicing reality check:** *"You've placed these uses here. Sarah — what does the engineering ask look like at this density? Is it realistic?"* (Sarah's actual lane.)
+- **Conditions in detail:** *"You've said affordability is a condition. What's the actual mechanism — percentage of units, target rent, length of covenant, who enforces?"*
+- **Partner profile:** *"Name a partner type that wouldn't fit. Why not? What's disqualifying?"*
+- **Trigger logic:** *"What's the one thing that has to be true before you release the next parcel? Be specific."*
+- **Reversibility:** *"Partner walks away after Phase 1 commitments. What protects the City and the residents already living there?"*
+- **Mix on a single parcel:** *"R-5 caps single-detached at 80%. Does that go far enough as a condition, or does the disposal agreement push it further? To what?"*
+- **The Central Node hand-off:** *"Who builds the ground-floor commercial in the Central Node? Who owns it after? Who leases it?"*
+- **Servicing reality check:** *"You've sequenced these releases. Sarah — what does the servicing trigger actually look like at each step? Realistic?"* (Sarah's actual lane.)
 
 ---
 
 ## Tables that are stuck
 
 - They're staring at the catalog without picking up a marker.
-- They're arguing about something tangential (zoning categories, parking ratios).
+- They're arguing about zoning details that are already set.
 - They keep asking *"is there a right answer?"*
 
-**Move:** point at one specific block in Phase 1 on the markup map and ask: *"Pretend a young couple moves in here in 2028. What's missing within walking distance? Start drawing what would fix that."* Anchoring on a single resident on a single block unblocks them.
+**Move:** point at one specific parcel along the corridor frontage and ask: *"Pretend the City is releasing this parcel next year as the first of Phase 1. What's the RFP say? What does the winning bidder have to commit to? Start writing the conditions on the trace paper."* Anchoring on a single parcel and a single transaction unblocks them.
 
 ---
 
 ## Sarah's role
 
-Sarah floats with Connor but plays the **engineering reality** card when needed. If a table proposes Phase 1 density or layout with no realistic servicing path, that's Sarah's natural intervention. Otherwise she observes and listens — quotes from these tables become content for future engagement.
+Sarah floats with Connor but plays the **engineering reality** card when needed. If a table proposes a release sequence with no realistic servicing path — or commits a partner to a phase before the lift station upgrade lands — that's Sarah's natural intervention. Otherwise she observes and listens — quotes from these tables become content for future engagement.
 
 ---
 
@@ -83,7 +86,7 @@ The reporters do the talking. Connor's job is to ask **one question per table** 
 
 The only place Connor adds content is the closing reflection (~30 seconds), if there's time:
 
-> *"What's hard about this is what's hard about every secondary plan once it's adopted. The framework decides where. Sequencing decides whether it works. The land-use plan tells you what can go where. The first two phases tell the neighbourhood — and the market — whether to believe it."*
+> *"Zoning sets envelope. Land disposition is what gets that envelope built — or not, or built wrong. On publicly-owned land, the disposal agreement is the planning instrument that matters most after adoption. That's the conversation the next ten years of secondary-plan implementation are going to be."*
 
 Then: thanks, leave-behind on the way out, see you at lunch.
 

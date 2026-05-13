@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Zones Applied in Phases 1 &amp; 2 — Workshop Handout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+  @page {
+    size: 17in 11in;
+    margin: 0.5in;
+  }
+
+  :root {
+    --cream:        #FAFAF7;
+    --paper:        #F2F1EC;
+    --ink:          #0F1419;
+    --ink-soft:     #3D454D;
+    --ink-mute:     #6B7480;
+    --zzap-accent:  #116DFF;
+    --zzap-white:   #FFFFFF;
+    --rule:         rgba(15, 20, 25, 0.12);
+    --rule-strong:  rgba(15, 20, 25, 0.30);
+
+    --font-sans:    'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-feature-settings: 'cv11', 'ss01', 'ss03', 'tnum', 'kern', 'liga';
+    -webkit-font-smoothing: antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ----- SHEET — 17×11 landscape ----- */
+  .sheet {
+    width: 16in;
+    min-height: 10in;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ----- META STRIP ----- */
+  .meta-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 14pt;
+    margin-bottom: 22pt;
+    font-family: var(--font-mono);
+    font-size: 8.5pt;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .meta-strip .meta-mark {
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+  .meta-strip .meta-sep {
+    color: var(--rule-strong);
+    margin: 0 0.6em;
+  }
+  .meta-strip .meta-group {
+    display: flex;
+    align-items: baseline;
+  }
+
+  /* ----- TITLE BLOCK ----- */
+  .title-block {
+    margin-bottom: 26pt;
+    padding-bottom: 0;
+  }
+  .title-block h1 {
+    font-family: var(--font-sans);
+    font-size: 38pt;
+    font-weight: 600;
+    letter-spacing: -0.028em;
+    line-height: 1.02;
+    color: var(--ink);
+    margin: 0 0 6pt;
+  }
+  .title-block .subtitle {
+    font-family: var(--font-body);
+    font-size: 11pt;
+    font-weight: 400;
+    color: var(--ink-soft);
+    line-height: 1.45;
+    margin: 0;
+    max-width: 8.5in;
+  }
+
+  /* ----- ZONES GRID ----- */
+  .zones-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 36pt;
+    align-items: stretch;
+    flex: 1;
+  }
+
+  .zone-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12pt;
+    padding-top: 14pt;
+    border-top: 1.2px solid var(--ink);
+  }
+
+  /* Zone tag — mono, all caps, bordered tab */
+  .zone-tag {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6pt 9pt 5pt;
+    font-family: var(--font-mono);
+    font-size: 10pt;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    background: transparent;
+    margin-bottom: 2pt;
+  }
+  .zone-tag.mr5 {
+    background: transparent; border-color: var(--ink); color: var(--ink);
+  }
+  .zone-tag.mx3 {
+    background: var(--zzap-accent);
+    border-color: var(--zzap-accent);
+    color: var(--zzap-white);
+  }
+  .zone-tag.r5 {
+    background: transparent;
+    border-color: var(--ink-mute);
+    color: var(--ink-mute);
+  }
+
+  .zone-col h2 {
+    font-family: var(--font-sans);
+    font-size: 22pt;
+    font-weight: 600;
+    letter-spacing: -0.026em;
+    color: var(--ink);
+    margin: 0;
+    line-height: 1.02;
+  }
+
+  .zone-intent {
+    font-family: var(--font-body);
+    font-size: 10.5pt;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .zone-intent strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Sub-section heading inside a column */
+  .zone-col h3 {
+    font-family: var(--font-mono);
+    font-size: 8.5pt;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin: 8pt 0 0;
+    padding-bottom: 6pt;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* Permitted uses block */
+  .zone-uses {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6pt;
+  }
+  .zone-uses li {
+    font-family: var(--font-body);
+    font-size: 9.5pt;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+  .zone-uses li .label {
+    font-family: var(--font-mono);
+    font-size: 7.5pt;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 2pt;
+  }
+
+  /* Parameters table */
+  .zone-params {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-mono);
+    font-size: 9pt;
+    font-variant-numeric: tabular-nums;
+  }
+  .zone-params tr {
+    border-top: 1px solid var(--rule);
+  }
+  .zone-params tr:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+  .zone-params th,
+  .zone-params td {
+    text-align: left;
+    vertical-align: top;
+    padding: 6pt 0;
+    line-height: 1.4;
+  }
+  .zone-params th {
+    font-weight: 500;
+    color: var(--ink-mute);
+    width: 45%;
+    padding-right: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 8pt;
+  }
+  .zone-params td {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .zone-params td strong {
+    color: var(--zzap-accent);
+    font-weight: 600;
+  }
+
+  .zone-fineprint {
+    font-family: var(--font-body);
+    font-size: 8.5pt;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--ink-mute);
+    margin: 0;
+  }
+
+  /* Source line */
+  .zone-source {
+    margin-top: auto;
+    font-family: var(--font-mono);
+    font-size: 7.5pt;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    padding-top: 10pt;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* ----- FOOTER ----- */
+  .footer {
+    margin-top: 26pt;
+    padding-top: 14pt;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--font-mono);
+    font-size: 8pt;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .footer .footer-cta {
+    color: var(--ink);
+  }
+  .footer .footer-accent {
+    color: var(--zzap-accent);
+  }
+
+  /* ----- Screen-view rendering (when not printing) ----- */
+  @media screen {
+    body {
+      padding: 32pt 0;
+    }
+    .sheet {
+      background: var(--cream);
+      box-shadow: 0 8px 24px rgba(15, 20, 25, 0.08), 0 0 0 1px var(--rule);
+      padding: 0.5in;
+      width: 16in;
+      min-height: 10in;
+    }
+  }
+</style>
+</head>
+<body>
+
+<section class="sheet">
+
+  <!-- Meta strip -->
+  <div class="meta-strip">
+    <div class="meta-group">
+      <span class="meta-mark">LPPANS 2026</span>
+      <span class="meta-sep">/</span>
+      <span>Sequencing Growth · Workshop Handout</span>
+    </div>
+    <div class="meta-group">
+      <span>Reference · Zones applied in Phases 1 &amp; 2</span>
+      <span class="meta-sep">/</span>
+      <span class="meta-mark">zzap</span>
+    </div>
+  </div>
+
+  <!-- Title block -->
+  <div class="title-block">
+    <h1>Three zones. Three jobs.</h1>
+    <p class="subtitle">
+      The Southeast Secondary Plan applies three zones across Phases 1 &amp; 2.
+      Keep this sheet next to the markup map when you're testing a sequencing decision against what each zone actually permits.
+    </p>
+  </div>
+
+  <!-- Zones grid -->
+  <div class="zones-grid">
+
+    <!-- MR-5 -->
+    <article class="zone-col">
+      <span class="zone-tag mr5">MR-5</span>
+      <h2>Multi-Residential Zone Five</h2>
+      <p class="zone-intent">
+        Multi-residential infill in the form of <strong>apartment buildings</strong>, with allowance for limited convenience commercial on the ground floor.
+        Located along public transit corridors. Provides for high-rise building height. More than one main residential building permitted on a lot.
+      </p>
+
+      <h3>What it permits</h3>
+      <ul class="zone-uses">
+        <li><span class="label">By right</span>Apartment building · assisted living.</li>
+        <li><span class="label">Conditional</span>Child-care centre (large) · convenience store · food-service take-out · personal service (apparel &amp; appearance) · single-room occupancy.</li>
+      </ul>
+
+      <h3>General parameters</h3>
+      <table class="zone-params">
+        <tr><th>Density (max)</th><td>160 u/ha · <strong>bonus to 333 u/ha</strong> for affordable</td></tr>
+        <tr><th>Lot coverage (max)</th><td>45 % of lot area</td></tr>
+        <tr><th>Building height (max)</th><td>24 m (higher with Mid-Town overlay)</td></tr>
+        <tr><th>Lot frontage (min)</th><td>30 m</td></tr>
+        <tr><th>Landscaped area (min)</th><td>35 % at grade</td></tr>
+      </table>
+
+      <p class="zone-fineprint">
+        Convenience commercial limited to 90 m² per unit, max 15 % of ground floor, ground floor only.
+      </p>
+
+      <p class="zone-source">City of Fredericton Zoning By-law &sect;9.6 (MR-5)</p>
+    </article>
+
+    <!-- MX-3 -->
+    <article class="zone-col">
+      <span class="zone-tag mx3">MX-3</span>
+      <h2>Mixed Use Zone Three</h2>
+      <p class="zone-intent">
+        Larger-scale buildings with commercial uses on lower floors and a <strong>required residential component above</strong>.
+        Along arterials or collectors. More than one main building permitted on a lot.
+        <strong>This is the zone applied to the Central Node.</strong>
+      </p>
+
+      <h3>What it permits</h3>
+      <ul class="zone-uses">
+        <li><span class="label">By right — commercial</span>Retail · grocery · restaurant · café / take-out · office · financial institution · fitness centre · medical practice · cultural establishment · studios (artisan, media, photo) · social organization.</li>
+        <li><span class="label">By right — residential</span>Apartment · dwelling unit · stacked townhouse · townhouse · workforce housing · assisted living.</li>
+        <li><span class="label">Conditional</span>Medical clinic · child-care centre (large) · single-room occupancy.</li>
+      </ul>
+
+      <h3>General parameters</h3>
+      <table class="zone-params">
+        <tr><th>Density (max)</th><td>100 u/ha · up to 285 in Mid-Town · <strong>333 affordable</strong></td></tr>
+        <tr><th>Lot coverage (max)</th><td>60 % of lot area</td></tr>
+        <tr><th>Building height</th><td>9 m min — 24 m max</td></tr>
+        <tr><th>Residential (min)</th><td><strong>25 % of GFA</strong> must be dwelling units</td></tr>
+        <tr><th>Floor caps (per use)</th><td>Retail 300 m² · grocery 700 m² · office 500 m²</td></tr>
+      </table>
+
+      <p class="zone-fineprint">
+        Residential cannot occupy ground-floor frontage and must have a separate entrance from any commercial use.
+      </p>
+
+      <p class="zone-source">City of Fredericton Zoning By-law &sect;11.13 (MX-3)</p>
+    </article>
+
+    <!-- R-5 -->
+    <article class="zone-col">
+      <span class="zone-tag r5">R-5</span>
+      <h2>Residential Zone Five</h2>
+      <p class="zone-intent">
+        Low-rise residential with a <strong>comprehensive mix of housing forms</strong> — single detached, duplex, semi-detached, townhouse, cluster.
+        Designed for suburban <strong>greenfield</strong> contexts on large parcels.
+        Up to three secondary dwelling units permitted per lot.
+      </p>
+
+      <h3>What it permits</h3>
+      <ul class="zone-uses">
+        <li><span class="label">By right</span>Single detached · semi-detached · duplex · townhouse · secondary dwelling units (up to 3 / lot) · home occupation · child-care centre (small) · group home (limited) · keeping of hens.</li>
+        <li><span class="label">Conditional</span>Cluster housing · child-care centre (medium) · group home · tourist home · single-room occupancy.</li>
+      </ul>
+
+      <h3>General parameters</h3>
+      <table class="zone-params">
+        <tr><th>Mix requirement</th><td>Single detached capped at <strong>80 %</strong> of total units</td></tr>
+        <tr><th>Single-detached standards</th><td>Follow R-1 (&sect;8.2(4))</td></tr>
+        <tr><th>Duplex / semi-detached</th><td>Follow R-3 (&sect;8.3(4))</td></tr>
+        <tr><th>Townhouse / cluster</th><td>Follow MR-1 (&sect;9.2(4))</td></tr>
+        <tr><th>Secondary units</th><td>Up to 3 per lot</td></tr>
+      </table>
+
+      <p class="zone-fineprint">
+        The 80 % single-detached cap is the lever — it forces mix at the parcel level, not just the plan-area average.
+      </p>
+
+      <p class="zone-source">City of Fredericton Zoning By-law &sect;8.5 (R-5)</p>
+    </article>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span class="footer-cta">Sequencing Growth · Connor Wallace + Sarah Young</span>
+    <span class="footer-accent">engagefredericton.ca/southeastsecondaryplan</span>
+  </div>
+
+</section>
+
+</body>
+</html>

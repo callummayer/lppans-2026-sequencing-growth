@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="theme.css">
 </head>
 <body>
@@ -17,22 +17,32 @@
     <div class="slides">
 
       <!-- 1. TITLE -->
-      <section class="title no-mark"
+      <section class="title no-mark cursor-spotlight"
                data-background-image="assets/site-aerial.jpg"
                data-background-size="cover"
                data-background-position="center 40%">
-        <div class="shapes"><span class="shape shape-1"></span><span class="shape shape-2"></span><span class="shape shape-3"></span></div>
         <div class="title-overlay">
-          <p class="meta">LPPANS 2026 — Bridging Ideas, Places, People</p>
-          <h1>Sequencing Growth</h1>
+          <p class="meta-strip">
+            <span class="meta-num">01 / 17</span>
+            <span class="meta-sep">/</span>
+            <span class="meta-chapter">LPPANS 2026</span>
+            <span class="meta-sep">/</span>
+            <span class="meta-loc">Halifax · May 15, 2026</span>
+          </p>
+          <h1 class="title-display">
+            <span class="w">Sequencing</span>
+            <span class="w">Growth</span><span class="title-period">.</span>
+          </h1>
           <p class="subtitle">Implementing the initial phases of a secondary plan in Fredericton's Southeast neighbourhood.</p>
           <div class="credits">
-            Connor Wallace, Principal — zzap Architecture <span class="plus">+</span> Planning<br>
-            With Sarah Young, EXP Services<br>
-            <span style="opacity:0.7;">May 15, 2026 &nbsp;·&nbsp; Lord Nelson Hotel, Halifax</span>
+            <span class="cred-line"><span class="cred-name">Connor Wallace</span> — Principal, zzap Architecture <span class="plus">+</span> Planning</span><br>
+            <span class="cred-line">With <span class="cred-name">Sarah Young</span>, EXP Services</span>
           </div>
         </div>
-        <div class="zzap-mark"></div>
+        <div class="title-logos">
+          <img src="assets/logos/zzap-logo.png" alt="zzap Architecture + Planning" class="title-logo">
+          <img src="assets/logos/exp-logo.png" alt="EXP Services" class="title-logo">
+        </div>
         <aside class="notes">
           Open with confidence. Pause after the title. Establish that this isn't a vision talk — it's an
           implementation talk. About 30 seconds.
@@ -46,64 +56,163 @@
 
       <!-- 2. HOOK -->
       <section class="hook">
-        <div class="shapes"><span class="shape shape-1"></span><span class="shape shape-2"></span></div>
-        <p class="eyebrow">The premise</p>
-        <p class="lead">
-          Planning for growth is one thing.<br>
-          <span class="swap"><em>Delivering it</em> is another.</span>
+        <p class="meta-strip">
+          <span class="meta-num">02 / 17</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-chapter">The premise</span>
         </p>
-        <div class="zzap-mark"></div>
+        <p class="lead">
+          Most secondary plans get adopted.<br>
+          <span class="swap"><em>Then they sit.</em></span>
+        </p>
         <aside class="notes">
-          ~45 seconds. The big reframe. Most secondary-plan talks are about vision and policy. This one is
-          about the messy middle — phasing, servicing, sequencing, who pays for what, when.
-          Sample line: "Every secondary plan I've ever read has a vision statement. Most of them are good.
-          The harder work is figuring out how that vision actually gets built — phase by phase, dollar by
-          dollar, decision by decision. That's what we're going to talk about, and then practice."
+          ~45 seconds. Plant the diagnostic. Everyone in this room has watched it happen — adoption,
+          press release, a few articles, and then quiet. Let them sit with that for a beat. Then pivot
+          to: this one is moving — here's the site. Click forward to the drone shot.
+          Sample line: "Most secondary plans get adopted. Then they sit. The vision goes on a shelf, the
+          council moves on to the next file, and ten years later someone notices in a comprehensive
+          review that the strategy never actually got built. The reason we're here today — the reason
+          this one is different — is what the City decided to do about disposition. We'll get there.
+          First, where it's happening."
           Pause before clicking forward.
         </aside>
       </section>
 
-      <!-- 3. PROJECT AT A GLANCE -->
-      <section>
-        <p class="section-header">The project</p>
-        <div class="two-col wide-right" style="margin-top: 36px;">
+      <!-- 3. GREENFIELD VIEW — image only, no text -->
+      <section class="no-mark image-slide full-bleed"
+               data-background-image="assets/new/drone-doak-road.jpg"
+               data-background-size="cover"
+               data-background-position="center">
+        <aside class="notes">
+          No text. Beat. Let the room register what raw greenfield looks like.
+          Sample line: "This is what we're talking about. Doak Road, southeast Fredericton, looking south.
+          A couple hundred hectares of undeveloped land. That's the starting point — and the constraint."
+          Then click forward.
+        </aside>
+      </section>
+
+      <!-- 4. PLAN HIERARCHY — where this instrument sits -->
+      <section class="hierarchy">
+        <p class="meta-strip">
+          <span class="meta-num">04 / 17</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-chapter">Context</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-loc">Plan hierarchy</span>
+        </p>
+        <div class="rule-top">
+          <h2 class="hierarchy-title">Three instruments. One framework.</h2>
+        </div>
+
+        <div class="hierarchy-stage">
+          <article class="h-card h-card-1">
+            <span class="h-step">Step 01</span>
+            <span class="h-scale">City-wide</span>
+            <h3>Municipal Plan</h3>
+          </article>
+
+          <div class="h-arrow h-arrow-1" aria-hidden="true">
+            <svg viewBox="0 0 120 14" preserveAspectRatio="none">
+              <defs>
+                <marker id="tip-1" viewBox="0 0 10 10" refX="9" refY="5"
+                        markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#116DFF"/>
+                </marker>
+              </defs>
+              <path class="flow" d="M 2 7 L 108 7" stroke="#116DFF" stroke-width="2.2"
+                    fill="none" marker-end="url(#tip-1)"/>
+            </svg>
+            <span class="h-arrow-label">translates&nbsp;to</span>
+          </div>
+
+          <article class="h-card h-card-2 is-active">
+            <span class="here-pill">This project</span>
+            <span class="h-step">Step 02</span>
+            <span class="h-scale">District</span>
+            <h3>Secondary Plan</h3>
+          </article>
+
+          <div class="h-arrow h-arrow-2" aria-hidden="true">
+            <svg viewBox="0 0 120 14" preserveAspectRatio="none">
+              <defs>
+                <marker id="tip-2" viewBox="0 0 10 10" refX="9" refY="5"
+                        markerWidth="5" markerHeight="5" orient="auto">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#116DFF"/>
+                </marker>
+              </defs>
+              <path class="flow" d="M 2 7 L 108 7" stroke="#116DFF" stroke-width="2.2"
+                    fill="none" marker-end="url(#tip-2)"/>
+            </svg>
+            <span class="h-arrow-label">translates&nbsp;to</span>
+          </div>
+
+          <article class="h-card h-card-3">
+            <span class="h-step">Step 03</span>
+            <span class="h-scale">Parcel</span>
+            <h3>Zoning Bylaw</h3>
+          </article>
+        </div>
+
+        <aside class="notes">
+          ~45 seconds. Orient the room before the project specifics.
+          Sample line: "Before the site — a quick orientation on instruments. A secondary plan isn't a
+          standalone document. It's the middle layer in a three-part framework. The municipal plan sets
+          city-wide direction — where growth goes, where the transit and housing priorities sit. The
+          zoning bylaw is the regulatory end — what you can actually build, lot by lot. The secondary
+          plan is the bridge between them. It takes municipal direction and makes it site-specific — land
+          use, phasing, urban design, servicing — and then it gets translated into zoning. Everything
+          I'm going to walk through lives in that middle layer."
+        </aside>
+      </section>
+
+      <!-- 5. PROJECT AT A GLANCE -->
+      <section class="project-section">
+        <p class="meta-strip">
+          <span class="meta-num">05 / 17</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-chapter">Context</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-loc">Southeast New Neighbourhood</span>
+        </p>
+        <div class="two-col project-glance rule-top" style="margin-top: 0;">
           <div>
-            <p class="eyebrow">Southeast New Neighbourhood</p>
-            <h2 style="margin-bottom: 0.4em;">Fredericton's fourth growth node.</h2>
-            <p style="font-size: 0.75em; color: var(--zzap-slate); max-width: 95%;">
-              A complete community for 5,000–7,000 residents on largely undeveloped land south of
-              Vanier Highway. Replaces an earlier "Uptown" growth node that didn't materialize.
-            </p>
-            <div class="stat-grid cards stagger" style="margin-top: 0.8em;">
-              <div class="stat">
-                <span class="num">~200</span>
-                <span class="label">Hectares of plan area</span>
+            <h2 class="fade-up-child" style="margin-bottom: 0.3em;">Fredericton's fourth growth node.</h2>
+            <div class="stat-rack fade-up-child" style="margin-top: 1.2em;">
+              <div class="stat-row">
+                <span class="counter" data-target="200" data-decimals="0" data-prefix="~">~200</span>
+                <span class="stat-unit">ha</span>
+                <span class="stat-line"></span>
+                <span class="stat-meta">Plan area</span>
               </div>
-              <div class="stat">
-                <span class="num">65%</span>
-                <span class="label">City-owned overall</span>
+              <div class="stat-row">
+                <span class="counter" data-target="65" data-decimals="0" data-suffix="%">65%</span>
+                <span class="stat-line"></span>
+                <span class="stat-meta">City-owned overall</span>
               </div>
-              <div class="stat">
-                <span class="num">100%</span>
-                <span class="label">City-owned in Phases 1 &amp; 2</span>
+              <div class="stat-row stat-row-emph">
+                <span class="counter" data-target="100" data-decimals="0" data-suffix="%">100%</span>
+                <span class="stat-line"></span>
+                <span class="stat-meta">City-owned in Phases 1 &amp; 2</span>
               </div>
-              <div class="stat">
-                <span class="num">5–7K</span>
-                <span class="label">Future residents by ~2046</span>
+              <div class="stat-row">
+                <span class="counter" data-target="7" data-decimals="0" data-prefix="5–">5–7K</span>
+                <span class="stat-unit">K</span>
+                <span class="stat-line"></span>
+                <span class="stat-meta">Future residents by ~2046</span>
               </div>
             </div>
-            <p style="font-size: 0.58em; color: var(--zzap-accent); margin-top: 0.7em; font-weight: 700; letter-spacing: 0.04em;">
-              Today's workshop focuses on Phases 1 &amp; 2 — entirely on City land.
+            <p class="fade-up-child" style="font-size: 0.5em; font-family: var(--font-mono); font-weight: 500; color: var(--zzap-accent); margin-top: 1.4em; letter-spacing: 0.02em; text-transform: uppercase;">
+              Today's workshop — Phases 1 &amp; 2, entirely on City land.
             </p>
           </div>
-          <div>
-            <img src="assets/new/context-map.jpg" alt="Fredericton growth nodes — Southeast highlighted, replacing the Uptown node" class="framed-img">
-            <p style="font-size: 0.45em; color: var(--zzap-slate); margin-top: 8px; text-align: right; opacity: 0.8;">
-              Fredericton growth nodes. Southeast (lower right) replaces the Uptown node that didn't materialize.
+          <div class="fade-up-child">
+            <img src="assets/new/context-map.jpg" alt="Fredericton growth nodes — Southeast highlighted, replacing the Uptown node" class="framed-img large">
+            <p class="figure-caption">
+              <span class="fig-num">Fig. 01</span>
+              <span>Fredericton growth nodes. Southeast (lower right) replaces the Uptown node that didn't materialize.</span>
             </p>
           </div>
         </div>
-        <div class="zzap-mark"></div>
         <aside class="notes">
           ~90 seconds. Establish geography, stakes, and the ownership lever.
           Sample line: "The Southeast New Neighbourhood sits south of the Vanier Highway, around Doak
@@ -117,65 +226,67 @@
         </aside>
       </section>
 
-      <!-- 4. THE TEAM (incorporates zzap framing — Connor speaks identity verbally) -->
+      <!-- 6. THE TEAM (incorporates zzap framing — Connor speaks identity verbally) -->
       <section>
-        <p class="section-header">The team</p>
-        <h2 style="margin-top: 50px;">Three offices, one plan.</h2>
-        <p style="font-size: 0.85em; color: var(--zzap-slate); max-width: 85%;">
-          The City initiated and led — setting scope, holding final decisions, presenting amendments to
-          Council. zzap brought the architecture <span class="plus">+</span> planning lens. EXP did the
-          engineering. And the community shaped the direction across two rounds of engagement.
+        <p class="meta-strip">
+          <span class="meta-num">06 / 17</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-chapter">Context</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-loc">The team</span>
         </p>
-        <div class="team-grid stagger">
-          <div class="role">
+        <div class="rule-top">
+          <h2>Three offices, one plan.</h2>
+        </div>
+        <div class="team-grid fade-up">
+          <div class="role fade-up-child">
+            <div class="role-mark role-mark-text">City</div>
             <p class="firm">Client &amp; lead</p>
             <h3>City of Fredericton</h3>
-            <p>Planning &amp; Development initiated the project in response to housing demand and the
-            lack of uptake at Uptown. Held the pen on policy direction, scope, and Council approvals.</p>
           </div>
-          <div class="role">
+          <div class="role fade-up-child">
+            <img class="role-mark" src="assets/logos/zzap-logo.png" alt="zzap">
             <p class="firm">Architecture <span class="plus">+</span> Planning</p>
             <h3>zzap Consulting Inc.</h3>
-            <p>Land use framework, urban design, demonstration plan, engagement, secondary-plan drafting.
-            A private-development portfolio brings a build-it lens to municipal work.</p>
           </div>
-          <div class="role">
+          <div class="role fade-up-child">
+            <img class="role-mark" src="assets/logos/exp-logo.png" alt="EXP">
             <p class="firm">Engineering</p>
             <h3>EXP Services</h3>
-            <p>Decades of local infrastructure experience in Fredericton. Initial feasibility study,
-            servicing strategy, transportation, stormwater, phasing of utility upgrades.</p>
           </div>
         </div>
-        <p style="font-size: 0.7em; color: var(--zzap-navy); margin-top: 1em; padding: 0.6em 0.8em; background: var(--zzap-pale); border-left: 3px solid var(--zzap-accent); max-width: 90%;">
-          <strong>Plus the people who live here.</strong> Residents, the Affordable Housing Committee,
-          and broader community input across two rounds of engagement shaped scope, priorities, and the
-          land-use framework — not as a consultation box-check, but as a fourth seat at the table.
+        <p class="pull-quote fade-up-child" style="font-size: 1.1em; margin-top: 1.8em; max-width: 70%;">
+          <strong>Plus the people who live here.</strong>
         </p>
-        <div class="zzap-mark"></div>
         <aside class="notes">
           ~60 seconds. Three consultants, one client, and the community. Don't read the cards — speak
           to the partnership and slip the zzap framing in verbally.
           Sample line: "Three offices. The City initiated this — it's their response to growth demand
           and the fact that Uptown didn't take off. They held the pen on policy, scope, and Council
           approvals; they set the constraints, and they approved scope changes as the project evolved.
-          zzap did the architecture and planning. We're a small firm out of Dartmouth — most of our
-          portfolio is private-sector multi-res and master-planned communities. Southeast Fredericton
-          is one of our larger municipal commissions, and the reason we got the call is exactly that
-          build-it background — we draft plans as people who've had to build them. EXP handled
-          engineering. They're local, decades of Fredericton infrastructure, and they led the initial
-          feasibility study that told us whether services could even reach the site. The reason that
-          mattered: every implementation question we'll talk about in a minute lives at the seam
-          between planning and engineering. If those two conversations happen sequentially you get a
-          plan that doesn't pencil. We did them in parallel. And alongside all three of us — the
-          community. Two rounds of engagement, a couple hundred touch points, and a real influence on
-          where this plan ended up."
+          zzap did the architecture and planning. We're a small firm out of Dartmouth — Southeast
+          Fredericton is one of our larger municipal commissions. EXP handled engineering. They're
+          local, decades of Fredericton infrastructure, and they led the initial feasibility study that
+          told us whether services could even reach the site. The reason that mattered: every
+          implementation question we'll talk about in a minute lives at the seam between planning and
+          engineering. If those two conversations happen sequentially you get a plan that doesn't
+          pencil. We did them in parallel. And alongside all three of us — the community. Two rounds of
+          engagement, a couple hundred touch points, and a real influence on where this plan ended up."
         </aside>
       </section>
 
-      <!-- 5. WHAT WE HEARD -->
+      <!-- 7. WHAT WE HEARD / ENGAGEMENT -->
       <section>
-        <p class="section-header">Engagement</p>
-        <h2 style="margin-top: 28px; font-size: 1.2em;">Two rounds. Different conversations.</h2>
+        <p class="meta-strip">
+          <span class="meta-num">07 / 17</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-chapter">Context</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-loc">Engagement</span>
+        </p>
+        <div class="rule-top">
+          <h2 style="font-size: 1.2em;">Two rounds. Different conversations.</h2>
+        </div>
         <div class="engagement-grid" style="margin-top: 0.4em;">
           <div class="engagement-col">
             <div class="engagement-photos">
@@ -193,28 +304,16 @@
             <div class="heard-grid compact">
               <div class="col">
                 <h4>Round 1 <span class="when">— Mar–Apr 2025</span></h4>
-                <p style="margin-top: 0.3em; font-size: 0.6em;"><strong>Open exploration.</strong> Pop-ups
-                  at the Co-op and youth hockey, two open houses at Grant Harvey Centre (~70 participants).</p>
-                <p class="big-quote" style="font-size: 0.7em; margin: 0.5em 0;">
+                <p class="big-quote" style="font-size: 0.78em; margin: 0.8em 0 0;">
                   Be <span class="accent">proactive, innovative, bold.</span> Phase 1 sets the tone.
-                  <span class="attr">Round 1 — community input</span>
-                </p>
-                <p style="font-size: 0.55em; color: var(--zzap-slate);">
-                  Themes: housing diversity &amp; affordability; transit and active modes from day one;
-                  wetlands and mature trees; "rethink the starter home."
+                  <span class="attr">Community input</span>
                 </p>
               </div>
               <div class="col">
                 <h4>Round 2 <span class="when">— Aug–Oct 2025</span></h4>
-                <p style="margin-top: 0.3em; font-size: 0.6em;"><strong>Focused review of the draft.</strong>
-                  Quieter — Engage Fredericton, two letters, deeper feedback from staff and the AHC.</p>
-                <p class="big-quote" style="font-size: 0.7em; margin: 0.5em 0;">
+                <p class="big-quote" style="font-size: 0.78em; margin: 0.8em 0 0;">
                   City-owned lands are a <span class="accent">unique opportunity</span> to deliver outcomes the market won't.
-                  <span class="attr">Round 2 — Affordable Housing Committee</span>
-                </p>
-                <p style="font-size: 0.55em; color: var(--zzap-slate);">
-                  Where it got specific: affordable vs. non-market housing; provincial wetland rules;
-                  parkland hierarchy; node attraction.
+                  <span class="attr">Affordable Housing Committee</span>
                 </p>
               </div>
             </div>
@@ -222,8 +321,13 @@
         </div>
 
         <!-- Timeline graphic -->
-        <div class="timeline">
+        <div class="timeline timeline-6">
           <div class="track"></div>
+          <div class="t-stop">
+            <span class="dot quiet"></span>
+            <span class="t-label">Feasibility study</span>
+            <span class="t-when">Oct–Dec 2024 · EXP servicing test</span>
+          </div>
           <div class="t-stop">
             <span class="dot active"></span>
             <span class="t-label">Round 1</span>
@@ -245,146 +349,155 @@
             <span class="t-when">Jan 2026</span>
           </div>
           <div class="t-stop">
-            <span class="dot pending"></span>
+            <span class="dot active"></span>
             <span class="t-label">Adoption</span>
-            <span class="t-when">2026 →</span>
+            <span class="t-when">Mar 2026</span>
           </div>
         </div>
 
         <div class="zzap-mark"></div>
         <aside class="notes">
           ~60 seconds. Don't read both columns — narrate the arc.
-          Sample line: "Engagement happened in two rounds, and they had a totally different character.
-          Round one — wide open. Pop-ups at the Co-op and at hockey games. About seventy people through
-          the open houses. Big themes were big themes: affordability, transit, environmental protection,
-          and a really strong push to be bold in phase one because the first thing built sets the trend.
-          Round two was quieter and sharper — staff and the Affordable Housing Committee, mostly. The
-          conversation moved from 'what should this be' to 'where exactly does the affordability lever
-          live, and how does the Central Node activate?' That second conversation is where this talk
-          mostly comes from."
+          Sample line: "Before either round of engagement we ran a feasibility study with EXP — late 2024,
+          before we drew any land-use lines — to confirm whether services could reach the site at all.
+          That set the ceiling for everything that followed. Then engagement happened in two rounds, and
+          they had a totally different character. Round one — wide open. Pop-ups at the Co-op and at hockey
+          games. About seventy people through the open houses. Big themes were big themes: affordability,
+          transit, environmental protection, and a really strong push to be bold in phase one because the
+          first thing built sets the trend. Round two was quieter and sharper — staff and the Affordable
+          Housing Committee, mostly. The conversation moved from 'what should this be' to 'where exactly
+          does the affordability lever live, and how does the Central Node activate?' Plan was adopted
+          March 2026."
         </aside>
       </section>
 
-      <!-- 6a. SECTION DIVIDER — three challenges -->
-      <section class="section-divider no-mark" data-background-color="#01274E">
-        <div class="shapes"><span class="shape shape-1"></span><span class="shape shape-2"></span><span class="shape shape-3"></span></div>
-        <p class="eyebrow">What this plan had to solve</p>
-        <h1>Three challenges shaped<br>this plan.</h1>
-        <p class="sub">
-          The same three you'll be working with at your tables. Each pairs a familiar trap with the move
-          the team made instead.
+      <!-- 8. SECTION DIVIDER — three challenges -->
+      <section class="section-divider no-mark" data-background-color="#0F1419">
+        <p class="meta-strip">
+          <span class="meta-num">08 / 17</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-chapter">Part Two</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-loc">What this plan had to solve</span>
         </p>
-        <div class="preview stagger">
-          <div class="item">
+        <h1 class="title-display fade-up">
+          <span class="w">Three</span>
+          <span class="w">challenges</span>
+          <span class="w">shaped</span><br>
+          <span class="w">this</span>
+          <span class="w">planning</span>
+          <span class="w">process<span class="title-period">.</span></span>
+        </h1>
+        <div class="preview preview-clean fade-up">
+          <div class="item fade-up-child">
             <span class="num">Challenge 01</span>
-            <h3>Servicing at the periphery.</h3>
-            <p>Bring water, sanitary, and storm to a site at the edge of the service envelope — without overbuilding for demand that hasn't arrived.</p>
+            <h3>Servicing.</h3>
           </div>
-          <div class="item">
+          <div class="item fade-up-child">
             <span class="num">Challenge 02</span>
-            <h3>Public land as a policy lever.</h3>
-            <p>65% of the plan area is City-owned. <strong style="color: var(--zzap-white);">100% of Phases 1 &amp; 2.</strong> The lever only works if disposition is deliberate.</p>
+            <h3>Public land.</h3>
           </div>
-          <div class="item">
+          <div class="item fade-up-child">
             <span class="num">Challenge 03</span>
-            <h3>A complete community in isolation.</h3>
-            <p>No neighbouring village to graft onto. Whatever opens day one has to be self-sufficient — and incremental enough not to fail.</p>
+            <h3>Community in isolation.</h3>
           </div>
         </div>
         <aside class="notes">
           ~20 seconds. Quick beat to set up the three challenges before walking through them one at a
           time. Don't read the cards — just gesture at the structure.
-          Sample line: "Three challenges shaped this plan. They're the three you'll be working with at
-          your tables — so pay attention to how we framed them, because in fifteen minutes you'll be
-          framing your own version. Let's walk them."
+          Sample line: "Three challenges shaped this planning process. They're the three you'll be working
+          with at your tables — so pay attention to how we framed them, because in fifteen minutes you'll
+          be framing your own version. Let's walk them."
         </aside>
       </section>
 
-      <!-- 6. CHALLENGE 1: SERVICING AT THE PERIPHERY -->
+      <!-- 9. CHALLENGE 1: SERVICING AT THE PERIPHERY -->
       <section class="challenge">
-        <p class="section-header">Challenge 1 of 3</p>
+        <p class="meta-strip">
+          <span class="meta-num">09 / 17</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-chapter">Challenge 01 of 03</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-loc">Servicing</span>
+        </p>
         <p class="number">01</p>
-        <h2 style="margin-top: 0.2em;">Servicing at the periphery.</h2>
-        <div class="challenge-with-figure stagger">
-          <p style="font-size: 0.7em; color: var(--zzap-slate); max-width: 95%;">
-            The plan area sits outside the existing service envelope — no municipal water, sanitary, or
-            stormwater. A new booster station, a storage tank, and lift station upgrades are required
-            before anyone occupies a unit. EXP's initial feasibility study told us whether services
-            could even reach the site — and at what cost. It set the frame for everything else.
-          </p>
-          <figure class="schematic">
+        <div class="rule-top">
+          <h2>Servicing at the periphery.</h2>
+        </div>
+        <div class="challenge-with-figure fade-up">
+          <figure class="schematic fade-up-child">
             <img src="assets/new/sewer-updated.png" alt="Conceptual sanitary servicing — updated plan">
-            <figcaption>Conceptual sanitary servicing — updated plan</figcaption>
+            <figcaption class="figure-caption">
+              <span class="fig-num">Fig. 02</span>
+              <span>Conceptual sanitary servicing — updated plan</span>
+              <span class="fig-source">EXP Services</span>
+            </figcaption>
           </figure>
         </div>
-        <div class="challenge-strategy compare stagger">
-          <div>
+        <div class="challenge-strategy compare fade-up">
+          <div class="fade-up-child">
             <h3>The trap</h3>
             <h2>Spend big upfront.</h2>
-            <p>Front-load all servicing to enable maximum buildout — and end up with empty pipes for a
-            decade if absorption is slow.</p>
           </div>
-          <span class="plus-divider">+</span>
-          <div>
+          <div class="fade-up-child">
             <h3>Our move</h3>
             <h2>Phase the pipes with the plan.</h2>
-            <p>Feasibility study, urban-design layout, and densities sized together. Servicing sequenced
-            phase-by-phase — Phase 1 infrastructure for Phase 1 buildout, with deliberate triggers for
-            the next round.</p>
           </div>
         </div>
-        <div class="zzap-mark"></div>
         <aside class="notes">
           ~90 seconds. The engineering challenge — keep it concrete. Set up the three-challenges frame
           here so it carries through the next two slides and into the workshop.
           Sample line: "Three challenges. They're the three this project asked us to figure out, and
           they're the same three I want you wrestling with when you get to your tables — because they
-          don't disappear once a plan is adopted. First: servicing. The plan area is at the edge. No
-          water, no sanitary, no storm. Bringing services means a new booster station, a new storage
-          tank, lift station upgrades on Wilsey Road, and culverts. Big capital. The trap is obvious —
-          overbuild upfront, hope demand catches up, and you end up with stranded municipal assets.
-          What EXP did instead was an initial feasibility study right at the front of the project to
-          figure out what services could actually reach the site, and at what cost. That study set the
-          ceiling. Then the land-use framework and the densities were sized inside that ceiling, with
-          the phasing matched to the servicing increments. Slower, but the dollars match the demand."
+          don't disappear once a plan is adopted. First: servicing. The plan area sits at the edge of the
+          existing service boundary, which means extending services to support development. A new booster
+          station, a new storage tank, lift station upgrades on Wilsey Road, culverts. Big capital. The
+          trap is obvious — overbuild upfront, hope demand catches up, and you end up with stranded
+          municipal assets. What EXP did instead was an initial feasibility study right at the front of
+          the project to figure out what services could actually reach the site, and at what cost. That
+          study set the ceiling. Then the land-use framework and the densities were sized inside that
+          ceiling, with the phasing matched to the servicing increments. Slower, but the dollars match
+          the demand."
           Pause on the "+". It's the through-line.
         </aside>
       </section>
 
-      <!-- 7. CHALLENGE 2: PUBLIC LAND AS POLICY LEVER -->
+      <!-- 10. CHALLENGE 2: PUBLIC LAND AS POLICY LEVER (text only — image moved to next slide) -->
       <section class="challenge">
-        <p class="section-header">Challenge 2 of 3</p>
+        <p class="meta-strip">
+          <span class="meta-num">10 / 17</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-chapter">Challenge 02 of 03</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-loc">Public land</span>
+        </p>
         <p class="number">02</p>
-        <h2 style="margin-top: 0.2em;">Public land as a policy lever.</h2>
-        <div class="challenge-with-figure stagger">
-          <p style="font-size: 0.7em; color: var(--zzap-slate); max-width: 95%;">
-            The City owns 65% of the plan area overall — and <strong>100% of Phases 1 and 2</strong>.
-            That's a rare degree of control over form, affordability, and pace at exactly the moment
-            tone is being set. But the lever only works if disposition is deliberate.
-          </p>
-          <figure class="schematic">
+        <div class="rule-top">
+          <h2>Public land as a policy lever.</h2>
+        </div>
+        <div class="challenge-with-figure fade-up">
+          <figure class="schematic fade-up-child">
             <img src="assets/new/city-owned-lands.jpg" alt="City of Fredericton property within the plan area — hatched">
-            <figcaption>City of Fredericton property (hatched) — 100% of Phases 1 &amp; 2</figcaption>
+            <figcaption class="figure-caption">
+              <span class="fig-num">Fig. 03</span>
+              <span>City of Fredericton property (hatched) — 100% of Phases 1 &amp; 2</span>
+              <span class="fig-source">City of Fredericton, Property Records</span>
+            </figcaption>
           </figure>
         </div>
-        <div class="challenge-strategy compare stagger">
-          <div>
+        <div class="challenge-strategy compare fade-up">
+          <div class="fade-up-child">
             <h3>The trap</h3>
             <h2>Sell the land, write the plan.</h2>
-            <p>Treat public land like any other parcel — sell to maximize revenue, lose the affordability
-            and form-control upside the plan is supposed to deliver.</p>
           </div>
-          <span class="plus-divider">+</span>
-          <div>
+          <div class="fade-up-child">
             <h3>Our move</h3>
             <h2>Tie release to phase triggers.</h2>
-            <p>Use the secondary plan to direct land disposition: parcels release on phase milestones with
-            conditions on housing mix, frontage, and density baked into the disposal terms.</p>
           </div>
         </div>
-        <div class="zzap-mark"></div>
         <aside class="notes">
-          ~90 seconds. This is the political/policy challenge.
+          ~70 seconds. This is the political/policy challenge. Image lives on the next slide — speak to
+          the lever here, then click forward and let the map sit.
           Sample line: "Second challenge — public land. Sixty-five percent across the plan area. And —
           this is the part to hold onto — one hundred percent of the first two phases. The phases you
           are about to work on at your tables are entirely on City land. That is a lot of leverage at
@@ -393,189 +506,285 @@
           plan, then sell parcels for top dollar to whoever shows up, and watch the affordability
           targets evaporate at land disposal. The strategy was to use the secondary plan to direct
           disposition: phase triggers tied to land release, conditions on housing mix and form embedded
-          in the sale terms. The plan and the parcels move together."
-          This is also the slide where the audience is most likely to ask questions later. Be ready.
+          in the sale terms. The plan and the parcels move together. Let me show you what that looks
+          like on the ground."
         </aside>
       </section>
 
-      <!-- 8. CHALLENGE 3: A COMPLETE COMMUNITY IN ISOLATION -->
+      <!-- 11. CHALLENGE 3: A COMPLETE COMMUNITY IN ISOLATION -->
       <section class="challenge">
-        <p class="section-header">Challenge 3 of 3</p>
+        <p class="meta-strip">
+          <span class="meta-num">11 / 17</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-chapter">Challenge 03 of 03</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-loc">Isolation</span>
+        </p>
         <p class="number">03</p>
-        <h2 style="margin-top: 0.2em;">A complete community in isolation.</h2>
-        <div class="challenge-with-figure stagger">
-          <p style="font-size: 0.7em; color: var(--zzap-slate); max-width: 95%;">
-            The site has no village to graft onto. No corner store, no school, no transit. Whatever opens
-            on day one has to be <strong>self-sufficient enough to function alone</strong> — and
-            <strong>incremental enough</strong> to not collapse waiting for demand to catch up. Get this
-            wrong at the start and you've designed a car-centric neighbourhood that's almost impossible
-            to retrofit later.
-          </p>
-          <figure class="schematic">
+        <div class="rule-top">
+          <h2>A complete community in isolation.</h2>
+        </div>
+        <div class="challenge-with-figure fade-up">
+          <figure class="schematic fade-up-child">
             <img src="assets/new/drone-isolation.jpg" alt="Looking northeast over the site — suburbia at the edge, then forest to the horizon">
-            <figcaption>Looking north — suburbia at the edge, then nothing to the horizon</figcaption>
+            <figcaption class="figure-caption">
+              <span class="fig-num">Fig. 04</span>
+              <span>Looking north — suburbia at the edge, then forest to the horizon</span>
+            </figcaption>
           </figure>
         </div>
-        <div class="challenge-strategy compare stagger">
-          <div>
+        <div class="challenge-strategy compare fade-up">
+          <div class="fade-up-child">
             <h3>The trap</h3>
             <h2>Build the centre first.</h2>
-            <p>Open the mixed-use Central Node early to "set the tone" — and watch ground-floor commercial
-            sit empty for years while the residential population it depends on slowly arrives.</p>
           </div>
-          <span class="plus-divider">+</span>
-          <div>
+          <div class="fade-up-child">
             <h3>Our move</h3>
-            <h2>Activate the node incrementally, anchored to the corridors.</h2>
-            <p>Sequence the Central Node <em>with</em> Corridor frontage on Alison Boulevard and Vanier
-            so the community has a functioning main street from Phase 1. Commercial scales up on routes
-            people already drive — the village centre fills in as the village arrives.</p>
+            <h2>Activate the corridors first.</h2>
           </div>
         </div>
-        <div class="zzap-mark"></div>
         <aside class="notes">
           ~90 seconds. The urbanism challenge — the one most planners in the room will recognize.
           Sample line: "Third — and this is the one that's going to come back at you in the workshop.
-          The site is isolated. There's no neighbouring village to lean on. So whatever we open in
-          Phase 1 has to be a complete community on its own — somewhere people can actually live, walk
-          to a store, send a kid to school. That's the bar. The plan calls for a mixed-use Central Node
-          to anchor that — village centre, shops, residential above. The problem with central nodes is
-          they need critical mass, and residential demand builds slowly. So you can't open Phase 1 with
-          a hollow town square waiting for customers. Our move was to spread activation across the two
-          Corridors — Alison and Vanier — alongside the Central Node. Those are routes that already
-          carry traffic. Commercial can activate incrementally there while the Central Node fills in
-          over time. The community gets a functioning main street from day one."
+          The site is isolated. There's an existing amenity nearby — the Co-op is within close proximity
+          on the periphery — but otherwise no neighbouring village to lean on. So whatever we open in
+          Phase 1 has to function as independently as possible — somewhere people can actually live,
+          walk to a store, send a kid to school. That's the bar. The plan calls for a mixed-use Central
+          Node to anchor that — village centre, shops, residential above — and the Central Node itself
+          sits inside Phase 2. The problem with central nodes is they need critical mass, and residential
+          demand builds slowly. So you can't open Phase 1 with a hollow town square waiting for
+          customers. Our move was to lead Phases 1 and 2 with corridor frontage on Alison Boulevard and
+          Doak Road — those are routes people already drive — and then thread into the Central Node as
+          part of Phase 2. Commercial activates incrementally along the corridors while the node fills
+          in. The community gets a functioning main street from day one."
           This sets up the workshop directly. Land it.
         </aside>
       </section>
 
-      <!-- 9. PHASING DIAGRAM -->
+      <!-- 12. PHASING DIAGRAM -->
       <section>
-        <p class="section-header">The answer the plan landed on</p>
-        <div class="two-col wide-right" style="margin-top: 14px; align-items: center;">
+        <p class="meta-strip">
+          <span class="meta-num">12 / 17</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-chapter">The plan</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-loc">Phasing</span>
+        </p>
+        <div class="two-col wide-right rule-top" style="align-items: center; margin-top: 0;">
           <div>
-            <h2 style="margin-bottom: 0.3em; font-size: 1.3em;">Six phases. Three logics.</h2>
-            <p style="font-size: 0.66em; color: var(--zzap-slate); margin-bottom: 0.45em;">
-              <strong>Phases 1 &amp; 2</strong> — open the corridor edge against existing services and
-              access. Unlock the Central Node early so the neighbourhood has a working main street from
-              the start.
-            </p>
-            <p style="font-size: 0.66em; color: var(--zzap-slate); margin-bottom: 0.45em;">
-              <strong>Phases 3 &amp; 4</strong> — infill behind demonstrated demand and the major
-              servicing investment that comes with it. Extend connections to Alison Boulevard for
-              future private-land phases.
-            </p>
-            <p style="font-size: 0.66em; color: var(--zzap-slate); margin-bottom: 0.6em;">
-              <strong>Phases 5 &amp; 6</strong> — continue infill to support the Central Node as the
-              area builds out.
-            </p>
-            <p style="font-size: 0.58em; color: var(--zzap-navy); padding: 0.5em 0.8em; background: var(--zzap-pale); border-left: 3px solid var(--zzap-accent); margin-bottom: 0.5em;">
-              <strong>Hatched area, southeast:</strong> reserved as a potential <strong>provincial
-              public-school site</strong> — fields, gym, basketball courts as part of the same investment.
-            </p>
-            <p style="font-size: 0.58em; color: var(--zzap-blue); font-style: italic; margin: 0;">
-              You're about to look at how Phases 1 and 2 build out.
+            <h2 class="fade-up-child" style="margin-bottom: 0.4em; font-size: 1.4em;">Six phases. Three logics.</h2>
+            <ul class="phase-list fade-up-child">
+              <li><span class="phase-num">1 · 2</span><span class="phase-logic">Corridor first, into the node</span></li>
+              <li><span class="phase-num">3 · 4</span><span class="phase-logic">Infill behind demand</span></li>
+              <li><span class="phase-num">5 · 6</span><span class="phase-logic">Build out around the node</span></li>
+            </ul>
+            <p class="fade-up-child" style="font-size: 0.5em; font-family: var(--font-mono); font-weight: 500; color: var(--zzap-accent); margin-top: 1.6em; text-transform: uppercase; letter-spacing: 0.04em;">
+              → You're about to work on Phases 1 and 2.
             </p>
           </div>
-          <div>
-            <img src="assets/new/phasing-updated.png" alt="Phasing plan — six phases, three logical groupings" class="framed-img">
-            <p style="font-size: 0.42em; color: var(--zzap-slate); margin-top: 4px; text-align: right; opacity: 0.8;">
-              Updated phasing plan — Southeast Secondary Plan, Jan 2026.
+          <div class="fade-up-child">
+            <img src="assets/new/land-use-plan.jpg" alt="Land use plan with phasing overlay — Southeast Secondary Plan" class="framed-img">
+            <p class="figure-caption">
+              <span class="fig-num">Fig. 05</span>
+              <span>Land use plan with phasing overlay</span>
+              <span class="fig-source">Southeast Secondary Plan, Jan 2026</span>
             </p>
           </div>
         </div>
-        <div class="zzap-mark"></div>
         <aside class="notes">
           ~60 seconds. Show, don't read. Let the map speak.
           Sample line: "Here's where the plan landed. Six phases, grouped into three logics. The
           arrangement isn't accidental — it tracks the three challenges I just walked through. Phases
           one and two together thread the corridor where access and servicing already exist, and they
-          unlock the Central Node early so the neighbourhood has a working main street from the start.
-          Phases three and four infill behind that — they're the phases that come on the back of
-          demonstrated demand and the major servicing investment that goes with them, and they extend
-          connections back up to Alison Boulevard for future phases on private lands. Phases five and
-          six continue the infill around the Central Node. One thing worth flagging — the hatched area
-          in the southeast is reserved as a potential provincial public-school site. If the Province
-          moves on it, a school here would integrate the community amenities this neighbourhood needs
-          anyway — playing fields, gym, basketball courts — into a single capital investment. That's a
-          partnership lever the plan is deliberately leaving room for. In about three minutes, you're
-          going to be looking at this map at your tables, focused on phases one and two."
-          DELIVERY HINT: This is the slide that bridges to the workshop. Slow down here.
+          lead into the Central Node — which itself sits inside Phase 2 — so the neighbourhood has a
+          working main street from the start. Phases three and four infill behind that — they're the
+          phases that come on the back of demonstrated demand and the major servicing investment that
+          goes with them, and they extend connections back up to Alison Boulevard for future phases on
+          private lands. Phases five and six continue the infill around the Central Node. One thing
+          worth flagging — the hatched area in the southeast is reserved as a potential provincial
+          public-school site. If the Province moves on it, a school here would integrate the community
+          amenities this neighbourhood needs anyway — playing fields, gym, basketball courts — into a
+          single capital investment. That's a partnership lever the plan is deliberately leaving room
+          for. In about three minutes, you're going to be looking at this map at your tables, focused
+          on phases one and two."
+          DELIVERY HINT: Bridges into the reflection slide. Don't rush the close.
         </aside>
       </section>
 
-      <!-- 10. WORKSHOP INTRO -->
-      <section class="workshop-intro" data-background-color="#01274E">
-        <div class="shapes"><span class="shape shape-1"></span><span class="shape shape-2"></span></div>
-        <div class="workshop-grid">
+      <!-- 13. WHAT WE CHANGED OUR MINDS ABOUT — vulnerability beat before the workshop -->
+      <section class="challenge reflection">
+        <p class="meta-strip">
+          <span class="meta-num">13 / 17</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-chapter">Reflection</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-loc">Before this version landed</span>
+        </p>
+        <div class="rule-top">
+          <h2>What we changed our minds about.</h2>
+        </div>
+        <div class="challenge-strategy compare reflection-compare fade-up">
+          <div class="fade-up-child">
+            <h3>First version</h3>
+            <h2>Central Node anchors Phase 1.</h2>
+          </div>
+          <div class="fade-up-child">
+            <h3>What shipped</h3>
+            <h2>Corridors lead. The node opens in Phase 2.</h2>
+          </div>
+        </div>
+        <p class="reflection-caption fade-up-child">
+          A village centre needs customers. Phase 1 didn't have them yet.
+        </p>
+        <aside class="notes">
+          ~60 seconds. The honesty beat before the workshop. Plant it plainly — no drama. The audience
+          is full of planners who've thrown drafts in the bin. They'll trust the rest of the talk more
+          if you say one thing got cut.
+          Sample line: "Before you head to your tables — one thing I want to flag. The phasing
+          arrangement you just looked at isn't the first one we drew. The first version had the Central
+          Node anchoring Phase 1 — village centre, shops, mixed use, all at the front, all on the
+          flagship parcel. It read well on paper. The engineers and the market consultant pointed out
+          the boring problem with town squares — they need people to walk into them, and Phase 1 by
+          definition doesn't have those people yet. So you'd be subsidizing leases for ten years, or
+          watching storefronts go dark before Phase 2 broke ground. So we moved it. Corridor frontage
+          leads. The node opens inside Phase 2, when there's a population to support it. Two reasons
+          I'm telling you this. One — what ships almost never matches what you drew first, and that's
+          fine. Two — in about two minutes you're going to feel the same pull at your tables. Lead with
+          the centre. It's the wrong move. Hold the line."
+        </aside>
+      </section>
+
+      <!-- 14. WORKSHOP INTRO -->
+      <section class="workshop-intro" data-background-color="#0F1419">
+        <p class="meta-strip">
+          <span class="meta-num">14 / 17</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-chapter">Workshop</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-loc">Your turn</span>
+        </p>
+        <div class="workshop-grid fade-up">
           <div>
-            <p class="eyebrow" style="color: var(--zzap-accent);">Your turn</p>
-            <h1 style="font-size: 1.15em; margin-bottom: 0.3em;">Phases 1 and 2.<br>Scale, mix, and orientation.</h1>
-            <p style="font-size: 0.62em; max-width: 95%; margin-top: 0.4em; opacity: 0.92;">
-              The plan already decides <em>where</em>: mixed-use Central Node in Phase 2, residential
-              plus other uses in Phase 1. Your job isn't to redo that. It's to figure out — given the
-              plan as approved — <strong>how a complete community actually builds out at a scale that
-              works.</strong>
-            </p>
-            <ul class="runsheet clean">
-              <li><span class="time">5 min</span> Orient to the catalog &amp; read the prompts.</li>
-              <li><span class="time">10 min</span> Round-table discussion. What mix of land uses goes
-                into Phases 1 &amp; 2 at an <em>achievable</em> scale that supports walkability?</li>
-              <li><span class="time">10 min</span> Mark up the blown-up plan. Buildings, accesses,
-                scales, frontages — sketch it.</li>
-              <li><span class="time">5 min</span> Two tables share back markups and discussion points.</li>
+            <h1 class="title-display fade-up-child" style="font-size: 1.6em; margin-bottom: 0.4em;">
+              <span class="w">Build</span>
+              <span class="w">out</span>
+              <span class="w">Phases</span>
+              <span class="w">1</span>
+              <span class="w">and</span>
+              <span class="w">2<span class="title-period">.</span></span>
+            </h1>
+            <ul class="runsheet clean fade-up-child" style="margin-top: 1.4em;">
+              <li><span class="time">5 min</span> Orient</li>
+              <li><span class="time">15 min</span> Discuss + draw on the trace paper</li>
+              <li><span class="time">5 min</span> Two tables share back</li>
             </ul>
-            <p style="font-size: 0.52em; opacity: 0.85; margin-top: 0.6em;">
-              <strong>On every table:</strong> two catalog sets of the plan schedules + one blown-up
-              Phases 1–2 markup sheet. <strong>QR code on the screen</strong> for a digital copy if
-              you'd rather mark up on an iPad.
-            </p>
-            <p style="font-size: 0.52em; color: var(--zzap-accent); margin-top: 0.4em; margin-bottom: 0;">
+            <p class="fade-up-child" style="font-size: 0.5em; font-family: var(--font-mono); color: var(--zzap-accent); margin-top: 1.6em; margin-bottom: 0; letter-spacing: 0.04em; text-transform: uppercase;">
               Sarah and I are floating. Wave us over.
             </p>
           </div>
-          <div class="workshop-figure">
+          <div class="workshop-figure fade-up-child">
             <img src="assets/new/land-use-plan.jpg" alt="Land use plan — Southeast Secondary Plan">
-            <p class="cap">Land use plan — the framework you're working inside.</p>
+            <p class="figure-caption" style="border-top-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.6);">
+              <span class="fig-num" style="color: rgba(255,255,255,0.85);">Fig. 06</span>
+              <span>Land use plan — the framework you're working inside</span>
+            </p>
           </div>
         </div>
-        <div class="zzap-mark"></div>
         <aside class="notes">
-          ~60 seconds. Crisp instructions. Reframe the exercise — this is NOT "where should the
-          mixed-use go." The plan already decided that. The exercise is about scale, mix, and
-          orientation inside the framework that's been approved.
-          Sample line: "Alright — your turn. Two things to set up first, because they matter. One: the
-          plan already decides where the mixed-use node lives. It's in Phase 2. Phase 1 is residential
-          with some other uses. Your job today is not to relitigate that. The plan went through a real
-          process, and it's there. What we're asking is harder and more interesting — given that the
-          plan is approved, how does this thing actually build out in Phases 1 and 2 at a scale that
-          works? What mix of uses goes where, at what density, oriented how, so this isolated greenfield
-          turns into a walkable place from the start and not a car-centric subdivision that we try to
-          fix later. That's the conversation. Two: what's on your table. Each table has two catalog
-          sets of the plan schedules — the road network, the open-space network, the land use plan,
-          the demonstration plan. Reference those. And one large blown-up Phases 1 and 2 map — that's
-          the napkin you sketch on. Buildings, accesses, scales, frontages. There's a QR code on the
-          screen if you'd rather mark up on an iPad. Five minutes to orient. Ten minutes to talk.
-          Ten minutes to mark up. Five minutes for two tables to share back. Sarah and I are floating —
-          wave us over. Questions before you start?"
+          ~45 seconds. Crisp instructions. Less text on the slide this time — frame the exercise verbally.
+          Sample line: "Alright — your turn. The plan is approved. What we're asking you to do is
+          implement it on Phases 1 and 2 — given the goals of the plan and the three challenges I just
+          walked through, what are some strategies, what are some moves, that actually deliver this on
+          the ground? On your table you've got a large map of Phases 1 and 2 with trace paper to draw
+          on, plus a catalog of the supporting plan schedules — land use, transportation, open space,
+          the demonstration plan. There's a QR code on the screen if you want any of that digitally,
+          including the secondary plan itself. Five minutes to orient, fifteen to discuss and sketch,
+          five for two tables to share back. Sarah and I are floating — wave us over."
           KEEP TIME. Resist letting Q&A eat the workshop.
         </aside>
       </section>
 
-      <!-- 11. CLOSING -->
-      <section class="closing">
-        <p class="eyebrow">More on the project</p>
-        <h1>Thank you.</h1>
-        <p style="font-size: 0.9em; color: var(--zzap-slate); max-width: 70%;">
-          Everything we've talked about — and the documents behind it — lives on Fredericton's engagement
-          page. zzap is at zzap.ca.
+      <!-- 15. ZONES OVERVIEW — replaces three per-zone reference slides; full schedules in table handout -->
+      <section class="zones-overview">
+        <p class="meta-strip">
+          <span class="meta-num">15 / 17</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-chapter">The plan</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-loc">Zones applied in Phases 1 &amp; 2</span>
         </p>
-        <div class="links">
+        <div class="rule-top">
+          <h2>Three zones. Three jobs.</h2>
+        </div>
+        <div class="zones-overview-grid fade-up">
+          <article class="zone-brief fade-up-child">
+            <span class="zone-tag mr5">MR-5</span>
+            <h3>Multi-Residential</h3>
+            <p class="zone-job">Carries the volume — apartments along the corridor edge, with limited ground-floor commercial.</p>
+            <p class="zone-meta">
+              <span>Height max</span> 24 m
+              <span class="sep">·</span>
+              <span>Density</span> 160 u/ha
+              <span class="sep">·</span>
+              <span>Affordable bonus to</span> 333 u/ha
+            </p>
+          </article>
+          <article class="zone-brief fade-up-child">
+            <span class="zone-tag mx3">MX-3</span>
+            <h3>Mixed Use</h3>
+            <p class="zone-job">Carries the programme — commercial below, residential above. The Central Node zone.</p>
+            <p class="zone-meta">
+              <span>Height</span> 9 m min — 24 m max
+              <span class="sep">·</span>
+              <span>Residential</span> 25 % GFA min
+            </p>
+          </article>
+          <article class="zone-brief fade-up-child">
+            <span class="zone-tag r5">R-5</span>
+            <h3>Residential</h3>
+            <p class="zone-job">Carries the mix — low-rise housing with single-detached capped at 80 % of units.</p>
+            <p class="zone-meta">
+              <span>Forms</span> single, semi, duplex, townhouse, cluster
+              <span class="sep">·</span>
+              <span>+ up to</span> 3 SDUs / lot
+            </p>
+          </article>
+        </div>
+        <p class="zones-overview-footer fade-up-child">
+          Full schedules on your tables. QR on screen for the digital copy.
+        </p>
+        <aside class="notes">
+          ~30 seconds. Land briefly between workshop-intro and closing — these three zones carry
+          Phases 1 and 2 and tables will reference them as they sketch. Don't read parameters; the
+          handout has the full schedule.
+          Sample line: "Three zones do most of the lifting in Phases 1 and 2. MR-5 — apartments along
+          the corridor. MX-3 — mixed use, the Central Node zone. R-5 — low-rise residential, single-
+          detached capped at eighty percent so the block-level mix is forced, not just the plan
+          average. The full schedule sheet is on your tables, QR on screen for the digital copy. To
+          your tables."
+        </aside>
+      </section>
+
+      <!-- 16. CLOSING -->
+      <section class="closing">
+        <p class="meta-strip">
+          <span class="meta-num">16 / 17</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-chapter">Closing</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-loc">More on the project</span>
+        </p>
+        <div class="rule-top">
+          <h1 class="title-display">
+            <span class="w">Thank</span>
+            <span class="w">you<span class="title-period">.</span></span>
+          </h1>
+        </div>
+        <div class="links fade-up-child" style="margin-top: 1.4em;">
           <a href="https://engagefredericton.ca/southeastsecondaryplan">engagefredericton.ca/southeastsecondaryplan</a>
           <a href="https://zzap.ca">zzap.ca</a>
-          <span style="color: var(--zzap-slate); font-size: 0.85em;">connor@zzap.ca <span class="plus">·</span> zzap Architecture <span class="plus">+</span> Planning, Dartmouth, NS</span>
+          <span style="color: var(--ink-mute); font-size: 0.85em; font-family: var(--font-mono); letter-spacing: 0;">connor@zzap.ca <span class="plus">·</span> zzap Architecture <span class="plus">+</span> Planning, Dartmouth, NS</span>
         </div>
-        <div class="zzap-mark"></div>
         <aside class="notes">
           ~30 seconds. Brief — workshop is the headline now.
           Sample line: "Project documents — including everything I just walked through — are on the
@@ -585,54 +794,58 @@
         </aside>
       </section>
 
-      <!-- 12. PROMPTS FOR THE TABLES (left on screen during workshop) -->
-      <section class="prompts" data-background-color="#EAF2FB">
-        <p class="section-header">At your tables — prompts to keep open</p>
-        <h2 style="margin-top: 36px; font-size: 1.4em;">Five questions to anchor the conversation.</h2>
-        <p style="font-size: 0.72em; color: var(--zzap-slate); max-width: 90%; margin-bottom: 1.2em;">
-          You don't have to answer all of them. They're here to keep the conversation honest — and to
-          help unstick a table that's circling.
+      <!-- 17. PROMPTS FOR THE TABLES (left on screen during workshop) -->
+      <section class="prompts">
+        <p class="meta-strip">
+          <span class="meta-num">17 / 17</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-chapter">Workshop</span>
+          <span class="meta-sep">/</span>
+          <span class="meta-loc">At your tables — prompts to keep open</span>
         </p>
-        <ol class="prompt-list stagger">
-          <li>
+        <div class="rule-top">
+          <h2 style="font-size: 1.4em;">The City is the landowner. How does that change the move?</h2>
+        </div>
+        <ol class="prompt-list fade-up" style="margin-top: 1.4em;">
+          <li class="fade-up-child">
             <span class="num">01</span>
             <div>
-              <h3>Phase 1, day one.</h3>
-              <p>Stand at the edge of Phase 1 on the morning of move-in. What does a resident need
-              within a five-minute walk for this to feel like a neighbourhood and not a subdivision?</p>
+              <h3>Disposition model.</h3>
+              <p>Outright sale, long-term lease, joint venture, RFP-with-conditions, land trust — what
+              disposition mechanism best delivers the plan's intent on publicly-owned land?</p>
             </div>
           </li>
-          <li>
+          <li class="fade-up-child">
             <span class="num">02</span>
             <div>
-              <h3>Scale that pencils.</h3>
-              <p>The Central Node is in Phase 2. What's the smallest viable version of it that can open
-              without sitting empty waiting for residential to catch up?</p>
+              <h3>The right partner.</h3>
+              <p>What does the first development partner look like for Phase 1? What track record,
+              capabilities, or commitments would you weight over price at RFP?</p>
             </div>
           </li>
-          <li>
+          <li class="fade-up-child">
             <span class="num">03</span>
             <div>
-              <h3>Mix without sprawl.</h3>
-              <p>Phase 1 is residential plus "some other uses." What other uses, where, and at what
-              frontage — without diluting the Central Node before it opens?</p>
+              <h3>Conditions in the sale.</h3>
+              <p>Zoning sets envelope. What does the disposal agreement need to carry on top — mix,
+              affordability, form, timing — so that approved zoning plus private intent actually delivers
+              the plan?</p>
             </div>
           </li>
-          <li>
+          <li class="fade-up-child">
             <span class="num">04</span>
             <div>
-              <h3>Walkable from isolation.</h3>
-              <p>The site has no neighbouring village. Which streets, frontages, or block sizes in
-              Phase 1 and 2 do the most work to discourage car-only living before the rest of the node
-              arrives?</p>
+              <h3>Release sequence.</h3>
+              <p>Which parcels go first, second, third? What servicing milestone, absorption signal, or
+              partnership state has to be true to unlock each release?</p>
             </div>
           </li>
-          <li>
+          <li class="fade-up-child">
             <span class="num">05</span>
             <div>
-              <h3>The trigger.</h3>
-              <p>What has to be true on the ground for it to be the right moment to move from Phase 1
-              into Phase 2? Population? Absorption? Servicing milestone? Something else?</p>
+              <h3>The handoff.</h3>
+              <p>Streets, parks, ground-floor commercial, affordable units — where does the City's role
+              stop and the partner's start? Who builds, who owns, who maintains?</p>
             </div>
           </li>
         </ol>
@@ -640,7 +853,8 @@
         <aside class="notes">
           NOT a slide you speak to. Click into it as you wrap, then walk to the tables. The slide stays
           on screen for the duration of the workshop so anyone who looks up sees the prompts.
-          If anyone asks "do we answer all five?" — no. They're scaffolding, not a checklist.
+          If anyone asks "do we answer all five?" — no. They're scaffolding, not a checklist. The
+          through-line is the same: City owns the land, intends to partner, what's the move.
         </aside>
       </section>
 
@@ -675,6 +889,37 @@
           content.appendChild(shapes);
         }
       });
+
+      // Cursor spotlight — soft radial gradient follows the pointer over hero images
+      document.querySelectorAll('.cursor-spotlight').forEach(el => {
+        el.addEventListener('mousemove', e => {
+          const r = el.getBoundingClientRect();
+          el.style.setProperty('--cx', ((e.clientX - r.left) / r.width  * 100) + '%');
+          el.style.setProperty('--cy', ((e.clientY - r.top)  / r.height * 100) + '%');
+        });
+      });
+
+      // Numeric counter — animate from 0 → data-target when slide is shown
+      const animateCounter = (el) => {
+        const target = parseFloat(el.dataset.target);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const dur = parseInt(el.dataset.dur || '1100', 10);
+        const prefix = el.dataset.prefix || '';
+        const suffix = el.dataset.suffix || '';
+        const start = performance.now();
+        const tick = (now) => {
+          const t = Math.min(1, (now - start) / dur);
+          const eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = prefix + (target * eased).toFixed(decimals) + suffix;
+          if (t < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      Reveal.on('slidechanged', (ev) => {
+        ev.currentSlide.querySelectorAll('.counter[data-target]').forEach(animateCounter);
+      });
+      // Kick off counters on the first slide
+      Reveal.getCurrentSlide().querySelectorAll('.counter[data-target]').forEach(animateCounter);
     });
   </script>
 </body>
