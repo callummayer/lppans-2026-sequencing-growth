@@ -10,7 +10,7 @@ Total session is 45 min: ~14 min talk + 25 min workshop + buffer.
 
 ## 0:00 — End of Connor's ~14-min talk
 
-Hand off straight from the workshop-intro slide. After workshop-intro Connor lands briefly on the zones-overview slide (~30 sec — point at the three tags, name the job each zone does, no parameters), then to the closing slide and finally the prompts slide. **The prompts slide stays on screen for the whole workshop.** No applause break, no transition. Keep momentum. The full schedule for each zone lives on the **zones handout** at each table — that's where tables go for detail.
+Hand off straight from the workshop-intro slide. After workshop-intro Connor lands briefly on the zones-overview slide (~30 sec — point at the three tags, name the job each zone does, no parameters), then to the prompts slide ("The City is the primary landowner. How does this change our approach?"). **The prompts slide stays on screen for the whole workshop.** No applause break, no transition. Keep momentum. The full schedule for each zone lives on the **zones handout** at each table — that's where tables go for detail.
 
 ## 0:00–0:05 · Set the table (5 min)
 
