@@ -2348,21 +2348,6 @@ section.phasing .two-col.rule-top .framed-img {
 }
 
 /* ============================================================
-   TITLE — LPPANS conference logo (top-right of cover)
-   ============================================================ */
-section.title .title-conf-logo {
-  position: absolute;
-  top: 44px;
-  right: 80px;
-  height: 38px;
-  width: auto;
-  z-index: 3;
-  opacity: 0;
-  filter: brightness(0) invert(1);
-  animation: fade-up 0.7s var(--ease) forwards 1.15s;
-}
-
-/* ============================================================
    ORIGINAL PLAN AREA CONDENSED — figure-anchored slide.
    Image is the focal point: pushed to near-full content width with
    the title block tight above it and minimal padding so it commands
