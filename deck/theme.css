@@ -2573,12 +2573,27 @@ section.plan-condensed .plan-condensed-fig .figure-caption {
   height: 100%;
   display: block;
 }
-/* Only the mirror facets rotate — the specular highlight and rim
-   shading stay fixed, like a real disco ball under a stationary light. */
+/* Only the mirror facets rotate — the rim shadow and sparkle glints
+   stay fixed, like a real disco ball under a stationary light. */
 .zzap-party .zp-ball svg .zp-tile-spin {
   transform-origin: center;
   transform-box: fill-box;
   animation: zp-tile-spin 5.5s linear infinite;
+}
+/* Sparkle glints — bright dots that twinkle out of phase to suggest
+   mirror tiles catching the room light as the ball turns. */
+.zzap-party .zp-ball svg .zp-glint {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: zp-glint 1.6s ease-in-out infinite;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.95));
+}
+.zzap-party .zp-ball svg .zp-glint-2 { animation-delay: 0.4s; animation-duration: 1.9s; }
+.zzap-party .zp-ball svg .zp-glint-3 { animation-delay: 0.9s; animation-duration: 1.4s; }
+.zzap-party .zp-ball svg .zp-glint-4 { animation-delay: 1.2s; animation-duration: 2.1s; }
+@keyframes zp-glint {
+  0%, 100% { opacity: 0.25; transform: scale(0.7); }
+  50%      { opacity: 1;    transform: scale(1.15); }
 }
 @keyframes zp-ball-drop {
   0%   { transform: translate(-50%, -120%); }

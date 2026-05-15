@@ -1041,43 +1041,51 @@
             <div class="zp-ball">
               <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <defs>
-                  <!-- Sphere base shading: highlight upper-left, deep shadow lower-right -->
+                  <!-- Sphere shading: white highlight at upper-left, deep navy at the far rim. -->
                   <radialGradient id="zp-globe" cx="32%" cy="28%">
                     <stop offset="0%"   stop-color="#ffffff"/>
-                    <stop offset="42%"  stop-color="#a6c4f5"/>
-                    <stop offset="100%" stop-color="#0e2143"/>
+                    <stop offset="35%"  stop-color="#d8e6fa"/>
+                    <stop offset="72%"  stop-color="#3a6cb0"/>
+                    <stop offset="100%" stop-color="#091230"/>
                   </radialGradient>
-                  <!-- 3D shadow overlay: transparent at the lit side, dark at the rim -->
-                  <radialGradient id="zp-shade" cx="32%" cy="28%">
-                    <stop offset="0%"   stop-color="rgba(255,255,255,0)"/>
-                    <stop offset="68%"  stop-color="rgba(0,0,0,0)"/>
-                    <stop offset="100%" stop-color="rgba(0,0,0,0.55)"/>
+                  <!-- Rim shadow on top of the facets, so the ball reads as a sphere. -->
+                  <radialGradient id="zp-rim" cx="35%" cy="32%">
+                    <stop offset="0%"   stop-color="rgba(0,0,0,0)"/>
+                    <stop offset="60%"  stop-color="rgba(0,0,0,0)"/>
+                    <stop offset="100%" stop-color="rgba(0,0,0,0.78)"/>
                   </radialGradient>
-                  <!-- Mirror facets: 2x2 tile of bright/blue/dark mirrors with thin gutter -->
-                  <pattern id="zp-tiles" width="9" height="9" patternUnits="userSpaceOnUse">
-                    <rect width="9" height="9" fill="rgba(5,10,28,0.78)"/>
-                    <rect x="0.6" y="0.6" width="3.4" height="3.4" fill="#ffffff"/>
-                    <rect x="5.0" y="0.6" width="3.4" height="3.4" fill="#7aa8ff"/>
-                    <rect x="0.6" y="5.0" width="3.4" height="3.4" fill="#2c5fa8"/>
-                    <rect x="5.0" y="5.0" width="3.4" height="3.4" fill="#e6efff"/>
+                  <!-- Mirror facet grid: dark gutters with bright translucent tiles.
+                       Translucent fills mean the sphere shading shows through each
+                       tile, so facets near the highlight read bright and facets
+                       near the rim read dark — like real mirrored tiles. -->
+                  <pattern id="zp-grid" width="13" height="13" patternUnits="userSpaceOnUse">
+                    <rect width="13" height="13" fill="#02060f"/>
+                    <rect x="0.7" y="0.7" width="5.2" height="5.2" fill="rgba(255,255,255,0.62)"/>
+                    <rect x="7.1" y="0.7" width="5.2" height="5.2" fill="rgba(255,255,255,0.62)"/>
+                    <rect x="0.7" y="7.1" width="5.2" height="5.2" fill="rgba(255,255,255,0.62)"/>
+                    <rect x="7.1" y="7.1" width="5.2" height="5.2" fill="rgba(255,255,255,0.62)"/>
                   </pattern>
                   <clipPath id="zp-clip">
-                    <circle cx="60" cy="60" r="54"/>
+                    <circle cx="60" cy="60" r="55"/>
                   </clipPath>
                 </defs>
+
                 <g clip-path="url(#zp-clip)">
-                  <!-- Base sphere fill -->
-                  <circle cx="60" cy="60" r="54" fill="url(#zp-globe)"/>
+                  <!-- Sphere base — provides 3D shading that shows through every facet -->
+                  <circle cx="60" cy="60" r="55" fill="url(#zp-globe)"/>
                   <!-- Mirror tile layer — rotates inside the sphere -->
                   <g class="zp-tile-spin">
-                    <rect x="-30" y="-30" width="180" height="180" fill="url(#zp-tiles)" opacity="0.62"/>
+                    <rect x="-30" y="-30" width="180" height="180" fill="url(#zp-grid)"/>
                   </g>
-                  <!-- Rim shading overlay (stationary) -->
-                  <circle cx="60" cy="60" r="54" fill="url(#zp-shade)"/>
-                  <!-- Specular highlight (stationary — light source doesn't move with the ball) -->
-                  <ellipse cx="42" cy="34" rx="13" ry="8" fill="rgba(255,255,255,0.42)"/>
-                  <ellipse cx="40" cy="31" rx="5.5" ry="3" fill="rgba(255,255,255,0.92)"/>
+                  <!-- Rim shadow (stationary, on top of facets) -->
+                  <circle cx="60" cy="60" r="55" fill="url(#zp-rim)"/>
+                  <!-- Sparkle glints: bright dots in the highlight zone that twinkle -->
+                  <circle class="zp-glint zp-glint-1" cx="40" cy="30" r="3.5"  fill="#ffffff"/>
+                  <circle class="zp-glint zp-glint-2" cx="52" cy="22" r="1.8"  fill="#ffffff"/>
+                  <circle class="zp-glint zp-glint-3" cx="28" cy="44" r="2.4"  fill="#ffffff"/>
+                  <circle class="zp-glint zp-glint-4" cx="60" cy="40" r="1.5"  fill="#ffffff"/>
                 </g>
+
                 <!-- Mounting cap where the string attaches -->
                 <rect x="54" y="2" width="12" height="6" fill="#161b22" rx="0.6"/>
                 <rect x="56.5" y="5" width="7" height="2" fill="#0b0f14"/>
