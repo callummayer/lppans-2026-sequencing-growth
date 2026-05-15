@@ -2570,8 +2570,8 @@ section.plan-condensed .plan-condensed-fig .figure-caption {
   width: 110px;
   height: 110px;
   filter:
-    drop-shadow(0 0 20px rgba(122, 168, 255, 0.55))
-    drop-shadow(0 0 40px rgba(255, 255, 255, 0.25));
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.18))
+    drop-shadow(0 0 22px rgba(170, 200, 255, 0.12));
   animation: zp-ball-sway 3.2s ease-in-out infinite alternate;
   transform-origin: top center;
 }
@@ -2756,21 +2756,24 @@ section.plan-condensed .plan-condensed-fig .figure-caption {
   animation: zp-goose-fly-l 12s linear infinite;
   animation-delay: -5s;
 }
+/* The 🪿 emoji renders facing left by default, so:
+   • flying right (left-to-right) — flip with scaleX(-1) so beak leads
+   • flying left (right-to-left) — no flip, beak already leads */
 @keyframes zp-goose-fly-r {
-  0%   { left: -12%; transform: translateY(0); }
-  20%  {             transform: translateY(-10px); }
-  40%  {             transform: translateY(2px); }
-  60%  {             transform: translateY(-7px); }
-  80%  {             transform: translateY(4px); }
-  100% { left: 112%; transform: translateY(0); }
+  0%   { left: -12%; transform: scaleX(-1) translateY(0); }
+  20%  {             transform: scaleX(-1) translateY(-10px); }
+  40%  {             transform: scaleX(-1) translateY(2px); }
+  60%  {             transform: scaleX(-1) translateY(-7px); }
+  80%  {             transform: scaleX(-1) translateY(4px); }
+  100% { left: 112%; transform: scaleX(-1) translateY(0); }
 }
 @keyframes zp-goose-fly-l {
-  0%   { left: 112%; transform: scaleX(-1) translateY(0); }
-  20%  {             transform: scaleX(-1) translateY(-8px); }
-  40%  {             transform: scaleX(-1) translateY(3px); }
-  60%  {             transform: scaleX(-1) translateY(-12px); }
-  80%  {             transform: scaleX(-1) translateY(2px); }
-  100% { left: -12%; transform: scaleX(-1) translateY(0); }
+  0%   { left: 112%; transform: translateY(0); }
+  20%  {             transform: translateY(-8px); }
+  40%  {             transform: translateY(3px); }
+  60%  {             transform: translateY(-12px); }
+  80%  {             transform: translateY(2px); }
+  100% { left: -12%; transform: translateY(0); }
 }
 
 /* --- Reduced motion: keep the vibe but cut the harshness --- */
