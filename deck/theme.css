@@ -62,7 +62,7 @@
 
 .reveal .slides section,
 .reveal .slides section > section {
-  padding: 110px 80px 80px;
+  padding: 110px 80px 100px;
   height: 100%;
   box-sizing: border-box;
   display: flex !important;
@@ -2234,24 +2234,64 @@ section.hierarchy .hierarchy-swoop {
   overflow: visible;
 }
 /* ============================================================
+   TOP-ANCHORED LAYOUT — content-heavy slides
+   Pins title into upper-third (golden short side) and lets the
+   main visual dominate the lower 61.8%. Replaces vertical center,
+   which left dead space at the top and pushed content below the
+   eye line on slides with substantial figures.
+   ============================================================ */
+section.challenge,
+section.phasing {
+  justify-content: flex-start !important;
+  padding-bottom: 100px !important;
+}
+
+/* Title block sits at the golden upper anchor (~y=160-220 in 800px).
+   The 50px margin lifts h2 just clear of the decorative big number
+   while keeping a generous, deliberate header zone. */
+section.challenge > .rule-top,
+section.challenge > .public-land-grid,
+section.challenge > .challenge-with-figure,
+section.challenge > .challenge-strategy,
+section.phasing > .two-col.rule-top {
+  flex: 0 0 auto;
+}
+section.challenge .rule-top {
+  margin-top: 50px;
+}
+section.challenge .challenge-with-figure {
+  margin-top: 40px !important;
+}
+section.challenge .challenge-strategy:not(.stack) {
+  margin-top: 32px !important;
+}
+
+/* Single-image challenge (servicing, isolation) — photo dominates
+   the lower zone with breathing room above and below. */
+section.challenge figure.schematic img:not(.fit-contain) {
+  max-height: 340px;
+}
+
+/* ============================================================
    PUBLIC LAND — image-left, strategy-stacked-right layout
-   The map needs to be large enough to read the hatched parcels;
-   the trap/move pair stacks vertically alongside instead of below.
+   The map needs to read; trap/move pair stacks alongside it.
+   Image capped at 400px so the grid fits inside the lower zone
+   without overflow — comfortably visible, leaves bottom safe area.
    ============================================================ */
 section.challenge .public-land-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
   gap: 44px;
   align-items: center;
-  margin-top: 0.8em;
+  margin-top: 40px !important;
 }
 section.challenge .public-land-grid .challenge-with-figure {
-  margin: 0;
+  margin: 0 !important;
 }
 section.challenge .public-land-grid figure.schematic img.fit-contain {
   width: 100%;
   height: auto;
-  max-height: 520px;
+  max-height: 400px;
   object-fit: contain;
   object-position: center;
   background: transparent;
@@ -2264,7 +2304,7 @@ section.challenge .public-land-grid .challenge-strategy.stack {
   display: flex;
   flex-direction: column;
   gap: 28px;
-  margin: 0;
+  margin: 0 !important;
 }
 section.challenge .public-land-grid .challenge-strategy.stack h3 {
   font-size: 0.55em;
@@ -2277,6 +2317,22 @@ section.challenge .public-land-grid .challenge-strategy.stack h2 {
   font-size: 1.05em;
   line-height: 1.1;
   margin: 0;
+}
+
+/* ============================================================
+   PHASING — two-col with map; cap image to keep within lower zone
+   ============================================================ */
+section.phasing .two-col.rule-top {
+  margin-top: 50px !important;
+}
+section.phasing .two-col.rule-top img,
+section.phasing .two-col.rule-top .framed-img {
+  max-height: 440px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 /* ============================================================
