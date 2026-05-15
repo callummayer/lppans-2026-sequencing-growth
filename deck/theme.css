@@ -2385,81 +2385,89 @@ section.plan-condensed .plan-condensed-fig .figure-caption {
 }
 
 /* ============================================================
-   Easter egg — Pong overlay. Lives outside the slide deck and
-   matches the deck's vocabulary: ink backdrop, cream + zzap-blue
-   accents, hairline border, monospace metadata above and below
-   the play surface. Triggered by typing "zzap"; ESC to exit.
+   Easter egg — type "zzap" to fire a burst of zzap wordmarks from
+   the cursor with a quick accent-color radial wash. Self-contained,
+   pointer-events: none, auto-clears in ~3 seconds. Doesn't take
+   over the deck — sits on top of the current slide as a flourish.
    ============================================================ */
-#zzap-pong {
+.zzap-burst {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(ellipse at center, #0d1218 0%, #06090c 70%, #04060a 100%);
-  color: var(--cream);
-  opacity: 0;
-  transition: opacity 0.28s var(--ease);
-  font-family: var(--font-mono);
-  letter-spacing: 0.02em;
-  cursor: none;
+  pointer-events: none;
+  overflow: hidden;
 }
-#zzap-pong.zp-visible {
-  opacity: 1;
+.zzap-burst .zb-wash {
+  position: absolute;
+  left: var(--cx);
+  top: var(--cy);
+  width: 1px;
+  height: 1px;
+  background: radial-gradient(
+    circle at center,
+    rgba(17, 109, 255, 0.55) 0%,
+    rgba(17, 109, 255, 0.25) 22%,
+    rgba(17, 109, 255, 0)   60%
+  );
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: zb-wash 0.95s var(--ease, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+  mix-blend-mode: screen;
 }
-#zzap-pong .zp-frame {
-  width: 960px;
-  max-width: 92vw;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+@keyframes zb-wash {
+  0%   { transform: translate(-50%, -50%) scale(0);    opacity: 0;    }
+  18%  { transform: translate(-50%, -50%) scale(900);  opacity: 1;    }
+  100% { transform: translate(-50%, -50%) scale(2400); opacity: 0;    }
 }
-#zzap-pong .zp-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  border-top: 1px solid rgba(244, 239, 230, 0.22);
-  padding-top: 10px;
-}
-#zzap-pong .zp-title {
+.zzap-burst .zb-particle {
+  position: absolute;
+  font-family: var(--font-display, "Inter Tight"), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
   color: var(--zzap-accent, #116DFF);
-  font-weight: 600;
+  letter-spacing: -0.04em;
+  text-shadow:
+    0 0 12px rgba(17, 109, 255, 0.35),
+    0 0 28px rgba(17, 109, 255, 0.18);
+  transform: translate(-50%, -50%) scale(0);
+  animation-name: zb-burst;
+  animation-timing-function: cubic-bezier(0.18, 0.8, 0.3, 1);
+  animation-fill-mode: forwards;
+  will-change: transform, opacity;
 }
-#zzap-pong .zp-status {
-  color: rgba(244, 239, 230, 0.55);
-  flex: 1;
-  text-align: center;
-  letter-spacing: 0.14em;
+.zzap-burst .zb-particle:nth-child(odd) {
+  color: var(--ink, #0c1117);
+  text-shadow: none;
 }
-#zzap-pong .zp-score {
-  font-feature-settings: "tnum";
-  font-variant-numeric: tabular-nums;
-  font-size: 13px;
-  letter-spacing: 0.22em;
-  color: var(--cream);
+.zzap-burst .zb-particle:nth-child(5n) {
+  color: var(--cream, #F4EFE6);
+  text-shadow: 0 0 18px rgba(244, 239, 230, 0.35);
 }
-#zzap-pong .zp-score #zp-p { color: var(--zzap-accent, #116DFF); }
-#zzap-pong .zp-score #zp-c { color: var(--cream); }
-#zzap-pong canvas#zp-canvas {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid rgba(244, 239, 230, 0.18);
-  background: #0c1117;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+@keyframes zb-burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    transform: translate(-50%, -50%) scale(var(--scale, 1)) rotate(calc(var(--rot, 0deg) * 0.1));
+    opacity: 1;
+  }
+  100% {
+    transform:
+      translate(calc(-50% + var(--dx, 0px)), calc(-50% + var(--dy, 0px)))
+      scale(var(--scale, 1))
+      rotate(var(--rot, 0deg));
+    opacity: 0;
+  }
 }
-#zzap-pong .zp-foot {
-  display: flex;
-  justify-content: space-between;
-  font-size: 9.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  color: rgba(244, 239, 230, 0.4);
-  border-bottom: 1px solid rgba(244, 239, 230, 0.18);
-  padding-bottom: 10px;
+/* Reduced-motion: still fire, but tone down the rotation/scale arc */
+@media (prefers-reduced-motion: reduce) {
+  .zzap-burst .zb-particle {
+    animation-duration: 0.6s !important;
+    animation-delay: 0s !important;
+  }
+  .zzap-burst .zb-wash {
+    animation-duration: 0.5s !important;
+  }
 }
