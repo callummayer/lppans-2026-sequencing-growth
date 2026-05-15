@@ -900,6 +900,30 @@
         });
       });
 
+      // Pointer parallax — write --mx/--my (range -1..1) to the active
+      // challenge/phasing slide so the chapter numeral and figure can
+      // drift subtly with the cursor. Composites with the keyframe drift
+      // via CSS calc(), giving the slide a continuous "in flux" quality
+      // without the figure ever leaving its frame.
+      const onPointer = (e) => {
+        const slide = document.querySelector(
+          '.reveal .slides section.challenge.present, .reveal .slides section.phasing.present'
+        );
+        if (!slide) return;
+        const x = (e.clientX / window.innerWidth  - 0.5) * 2;
+        const y = (e.clientY / window.innerHeight - 0.5) * 2;
+        slide.style.setProperty('--mx', x.toFixed(3));
+        slide.style.setProperty('--my', y.toFixed(3));
+      };
+      document.addEventListener('pointermove', onPointer, { passive: true });
+      Reveal.on('slidechanged', () => {
+        // reset on slide change so the next slide doesn't inherit stale offsets
+        document.querySelectorAll('.reveal .slides section').forEach(s => {
+          s.style.removeProperty('--mx');
+          s.style.removeProperty('--my');
+        });
+      });
+
       // Numeric counter — animate from 0 → data-target when slide is shown
       const animateCounter = (el) => {
         const target = parseFloat(el.dataset.target);

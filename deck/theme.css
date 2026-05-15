@@ -423,21 +423,60 @@ section.challenge .label {
   margin: 0 0 0.6em;
 }
 
+/* Chapter numeral — repositioned as a bottom-right folio mark so it
+   sits in the bottom safe zone instead of eating the upper-third where
+   the title + image need to live. Pairs with the slide-number at
+   bottom-left to bracket the slide like an architectural plate.
+   Bleeds slightly off the right edge for a sense of scale.
+   Continuous slow drift gives the slide a quiet "in flux" pulse while present. */
 section.challenge .number {
-  position: absolute;
-  top: 38px;
-  right: 80px;
-  font-family: var(--font-sans);
-  font-size: 6.5em;
-  font-weight: 200;
-  line-height: 0.9;
-  color: var(--ink);
-  opacity: 0.06;
-  letter-spacing: -0.05em;
-  margin: 0;
-  z-index: 0;
-  font-variant-numeric: tabular-nums;
-  pointer-events: none;
+  position: absolute !important;
+  top: auto !important;
+  bottom: -0.18em !important;
+  left: auto !important;
+  right: -0.08em !important;
+  font-family: var(--font-sans) !important;
+  font-size: 11em !important;
+  font-weight: 200 !important;
+  line-height: 0.78 !important;
+  color: var(--ink) !important;
+  opacity: 0;
+  letter-spacing: -0.08em !important;
+  margin: 0 !important;
+  z-index: 0 !important;
+  font-variant-numeric: tabular-nums !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+  transform: translate(0.4em, 0.2em);
+  transition: transform 1.6s var(--ease), opacity 1.6s var(--ease);
+}
+
+section.challenge.present .number {
+  opacity: 0.07;
+  transform: translate(0, 0);
+  animation: numeral-drift 18s ease-in-out 1.6s infinite alternate;
+}
+
+@keyframes numeral-drift {
+  from {
+    transform: translate(calc(var(--mx, 0) * 0.06em), calc(var(--my, 0) * 0.04em));
+    opacity: 0.07;
+  }
+  to {
+    transform: translate(calc(-0.14em + var(--mx, 0) * 0.06em), calc(-0.06em + var(--my, 0) * 0.04em));
+    opacity: 0.095;
+  }
+}
+
+/* Hero figure picks up a tiny inverse parallax — feels three-dimensional
+   without the image ever drifting out of its caption frame. Applied to
+   the inner img so it doesn't conflict with the fade-up entrance on the
+   parent figure. */
+section.challenge.present figure.schematic img,
+section.phasing.present .two-col.rule-top img {
+  transform: translate(calc(var(--mx, 0) * -3px), calc(var(--my, 0) * -2px));
+  transition: transform 0.4s var(--ease-soft);
+  will-change: transform;
 }
 
 section.challenge .challenge-framing {
@@ -2234,64 +2273,40 @@ section.hierarchy .hierarchy-swoop {
   overflow: visible;
 }
 /* ============================================================
-   TOP-ANCHORED LAYOUT — content-heavy slides
-   Pins title into upper-third (golden short side) and lets the
-   main visual dominate the lower 61.8%. Replaces vertical center,
-   which left dead space at the top and pushed content below the
-   eye line on slides with substantial figures.
+   CONTENT-HEAVY SLIDES — vertical center, image heights capped
+   Content (title + figure + strategy) sits in the 590px-tall flex
+   zone (110px top padding + 100px bottom). With justify-content:
+   center (inherited from the base section rule) the whole block
+   centers vertically. Image max-heights are tuned so the full
+   composition fits without bottom-crop.
    ============================================================ */
 section.challenge,
 section.phasing {
-  justify-content: flex-start !important;
   padding-bottom: 100px !important;
 }
 
-/* Title block sits at the golden upper anchor (~y=160-220 in 800px).
-   The 50px margin lifts h2 just clear of the decorative big number
-   while keeping a generous, deliberate header zone. */
-section.challenge > .rule-top,
-section.challenge > .public-land-grid,
-section.challenge > .challenge-with-figure,
-section.challenge > .challenge-strategy,
-section.phasing > .two-col.rule-top {
-  flex: 0 0 auto;
-}
-section.challenge .rule-top {
-  margin-top: 50px;
-}
-section.challenge .challenge-with-figure {
-  margin-top: 40px !important;
-}
-section.challenge .challenge-strategy:not(.stack) {
-  margin-top: 32px !important;
-}
-
-/* Single-image challenge (servicing, isolation) — photo dominates
-   the lower zone with breathing room above and below. */
+/* Single-image challenge (servicing, isolation) */
 section.challenge figure.schematic img:not(.fit-contain) {
-  max-height: 340px;
+  max-height: 360px;
 }
 
 /* ============================================================
    PUBLIC LAND — image-left, strategy-stacked-right layout
-   The map needs to read; trap/move pair stacks alongside it.
-   Image capped at 400px so the grid fits inside the lower zone
-   without overflow — comfortably visible, leaves bottom safe area.
    ============================================================ */
 section.challenge .public-land-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
   gap: 44px;
   align-items: center;
-  margin-top: 40px !important;
+  margin-top: 0.8em;
 }
 section.challenge .public-land-grid .challenge-with-figure {
-  margin: 0 !important;
+  margin: 0;
 }
 section.challenge .public-land-grid figure.schematic img.fit-contain {
   width: 100%;
   height: auto;
-  max-height: 400px;
+  max-height: 420px;
   object-fit: contain;
   object-position: center;
   background: transparent;
@@ -2304,7 +2319,7 @@ section.challenge .public-land-grid .challenge-strategy.stack {
   display: flex;
   flex-direction: column;
   gap: 28px;
-  margin: 0 !important;
+  margin: 0;
 }
 section.challenge .public-land-grid .challenge-strategy.stack h3 {
   font-size: 0.55em;
@@ -2320,14 +2335,11 @@ section.challenge .public-land-grid .challenge-strategy.stack h2 {
 }
 
 /* ============================================================
-   PHASING — two-col with map; cap image to keep within lower zone
+   PHASING — two-col with map; cap image to fit centered zone
    ============================================================ */
-section.phasing .two-col.rule-top {
-  margin-top: 50px !important;
-}
 section.phasing .two-col.rule-top img,
 section.phasing .two-col.rule-top .framed-img {
-  max-height: 440px;
+  max-height: 460px;
   width: auto;
   object-fit: contain;
   display: block;
