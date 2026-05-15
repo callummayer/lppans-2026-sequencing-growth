@@ -947,5 +947,219 @@
       Reveal.getCurrentSlide().querySelectorAll('.counter[data-target]').forEach(animateCounter);
     });
   </script>
+
+  <!-- ============================================================
+       EASTER EGG — type 'zzap' anywhere to launch Phasing Showdown
+       (Pong themed with the deck's palette). ESC to exit, first to
+       five wins. Hidden from the audience unless someone knows the
+       phrase.
+       ============================================================ -->
+  <script>
+    (function() {
+      const TRIGGER = 'zzap';
+      let buffer = '';
+      let gameActive = false;
+
+      document.addEventListener('keydown', (e) => {
+        if (gameActive) return;
+        const t = e.target;
+        if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+        if (e.key.length !== 1 || !/[a-z]/i.test(e.key)) { buffer = ''; return; }
+        buffer = (buffer + e.key.toLowerCase()).slice(-TRIGGER.length);
+        if (buffer === TRIGGER) {
+          buffer = '';
+          launch();
+        }
+      });
+
+      function launch() {
+        gameActive = true;
+        const overlay = document.createElement('div');
+        overlay.id = 'zzap-pong';
+        overlay.innerHTML = `
+          <div class="zp-frame">
+            <div class="zp-header">
+              <span class="zp-title">ZZAP / PHASING&nbsp;SHOWDOWN</span>
+              <span class="zp-status" id="zp-status">First to 5. ESC to exit. W/S or ↑/↓ to defend.</span>
+              <span class="zp-score"><span id="zp-p">0</span> &nbsp;·&nbsp; <span id="zp-c">0</span></span>
+            </div>
+            <canvas id="zp-canvas" width="960" height="540"></canvas>
+            <div class="zp-foot">PLAYER · CITY&nbsp;OF&nbsp;FREDERICTON &nbsp;&nbsp;//&nbsp;&nbsp; CPU · UNCOORDINATED&nbsp;SPRAWL</div>
+          </div>
+        `;
+        document.body.appendChild(overlay);
+        requestAnimationFrame(() => overlay.classList.add('zp-visible'));
+        runGame(overlay);
+      }
+
+      function runGame(overlay) {
+        const canvas = overlay.querySelector('#zp-canvas');
+        const ctx = canvas.getContext('2d');
+        const W = canvas.width, H = canvas.height;
+        const PADDLE_H = 96, PADDLE_W = 10;
+
+        // Read palette from CSS variables so the game stays on-brand
+        const css = getComputedStyle(document.documentElement);
+        const ACCENT = (css.getPropertyValue('--zzap-accent') || '#116DFF').trim();
+        const CREAM  = (css.getPropertyValue('--cream')       || '#F4EFE6').trim();
+        const INK    = '#0c1117';
+        const RULE   = 'rgba(255,255,255,0.14)';
+
+        const player = { x: 36,                y: H/2 - PADDLE_H/2 };
+        const cpu    = { x: W - 36 - PADDLE_W, y: H/2 - PADDLE_H/2 };
+        const ball   = { x: W/2, y: H/2, vx: 5.5, vy: 2.5, r: 7, trail: [] };
+        const score  = { p: 0, c: 0 };
+        const keys   = {};
+        let raf = null;
+        let over = false;
+        let winnerMsg = '';
+
+        const onKeyDown = (e) => {
+          keys[e.key.toLowerCase()] = true;
+          if (e.key === 'Escape') exit();
+        };
+        const onKeyUp = (e) => { keys[e.key.toLowerCase()] = false; };
+        document.addEventListener('keydown', onKeyDown);
+        document.addEventListener('keyup', onKeyUp);
+
+        function exit() {
+          cancelAnimationFrame(raf);
+          document.removeEventListener('keydown', onKeyDown);
+          document.removeEventListener('keyup', onKeyUp);
+          overlay.classList.remove('zp-visible');
+          setTimeout(() => { overlay.remove(); gameActive = false; }, 280);
+        }
+
+        function resetBall(dir) {
+          ball.x = W/2; ball.y = H/2;
+          ball.vx = 5.5 * dir;
+          ball.vy = (Math.random() - 0.5) * 5;
+          ball.trail.length = 0;
+        }
+
+        function update() {
+          if (over) return;
+          const speed = 8.5;
+          if (keys['w'] || keys['arrowup'])   player.y -= speed;
+          if (keys['s'] || keys['arrowdown']) player.y += speed;
+          player.y = Math.max(0, Math.min(H - PADDLE_H, player.y));
+
+          // CPU AI — lerp toward ball with deadband, slightly imperfect
+          const target = ball.y - PADDLE_H/2;
+          const aiSpeed = 4.6;
+          if (cpu.y < target - 8) cpu.y += aiSpeed;
+          else if (cpu.y > target + 8) cpu.y -= aiSpeed;
+          cpu.y = Math.max(0, Math.min(H - PADDLE_H, cpu.y));
+
+          ball.trail.push({ x: ball.x, y: ball.y });
+          if (ball.trail.length > 12) ball.trail.shift();
+
+          ball.x += ball.vx;
+          ball.y += ball.vy;
+
+          if (ball.y <= ball.r)      { ball.y = ball.r; ball.vy *= -1; }
+          if (ball.y >= H - ball.r)  { ball.y = H - ball.r; ball.vy *= -1; }
+
+          // Player paddle hit
+          if (ball.vx < 0 &&
+              ball.x - ball.r <= player.x + PADDLE_W &&
+              ball.x - ball.r >= player.x - 4 &&
+              ball.y >= player.y && ball.y <= player.y + PADDLE_H) {
+            ball.vx = Math.abs(ball.vx) * 1.05;
+            const offset = (ball.y - (player.y + PADDLE_H/2)) / (PADDLE_H/2);
+            ball.vy += offset * 2.4;
+          }
+          // CPU paddle hit
+          if (ball.vx > 0 &&
+              ball.x + ball.r >= cpu.x &&
+              ball.x + ball.r <= cpu.x + PADDLE_W + 4 &&
+              ball.y >= cpu.y && ball.y <= cpu.y + PADDLE_H) {
+            ball.vx = -Math.abs(ball.vx) * 1.05;
+            const offset = (ball.y - (cpu.y + PADDLE_H/2)) / (PADDLE_H/2);
+            ball.vy += offset * 2.4;
+          }
+
+          ball.vx = Math.max(-14, Math.min(14, ball.vx));
+          ball.vy = Math.max(-11, Math.min(11, ball.vy));
+
+          if (ball.x < -20)     { score.c++; resetBall(-1); }
+          if (ball.x > W + 20)  { score.p++; resetBall(1);  }
+
+          document.getElementById('zp-p').textContent = score.p;
+          document.getElementById('zp-c').textContent = score.c;
+
+          if (score.p >= 5 || score.c >= 5) {
+            over = true;
+            winnerMsg = score.p >= 5 ? 'PLAN HELD. PARCELS PHASED.' : 'SPRAWL WINS. DISPOSAL UNCOORDINATED.';
+            document.getElementById('zp-status').textContent = winnerMsg + '  ESC to exit.';
+          }
+        }
+
+        function draw() {
+          ctx.fillStyle = INK;
+          ctx.fillRect(0, 0, W, H);
+
+          // Center hairline — matches the deck rule-top motif
+          ctx.strokeStyle = RULE;
+          ctx.lineWidth = 1;
+          ctx.setLineDash([5, 9]);
+          ctx.beginPath();
+          ctx.moveTo(W/2 + 0.5, 0);
+          ctx.lineTo(W/2 + 0.5, H);
+          ctx.stroke();
+          ctx.setLineDash([]);
+
+          // Ball trail — fades behind the ball, gives motion-blur feel
+          for (let i = 0; i < ball.trail.length; i++) {
+            const p = ball.trail[i];
+            const alpha = (i + 1) / ball.trail.length * 0.35;
+            ctx.fillStyle = `rgba(244, 239, 230, ${alpha})`;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, ball.r * (0.5 + i / ball.trail.length * 0.5), 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          // Paddles
+          ctx.fillStyle = ACCENT;
+          ctx.fillRect(player.x, player.y, PADDLE_W, PADDLE_H);
+          ctx.fillStyle = CREAM;
+          ctx.fillRect(cpu.x, cpu.y, PADDLE_W, PADDLE_H);
+
+          // Ball
+          ctx.fillStyle = CREAM;
+          ctx.beginPath();
+          ctx.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Score watermarks — quarter-opacity scoreboards on each side
+          ctx.font = '600 220px "Inter Tight", system-ui, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillStyle = 'rgba(17, 109, 255, 0.07)';
+          ctx.fillText(score.p, W * 0.28, H * 0.5);
+          ctx.fillStyle = 'rgba(244, 239, 230, 0.05)';
+          ctx.fillText(score.c, W * 0.72, H * 0.5);
+
+          if (over) {
+            ctx.fillStyle = 'rgba(8, 12, 17, 0.78)';
+            ctx.fillRect(0, H/2 - 60, W, 120);
+            ctx.fillStyle = CREAM;
+            ctx.font = '600 22px "JetBrains Mono", ui-monospace, monospace';
+            ctx.fillText(winnerMsg, W/2, H/2 - 8);
+            ctx.fillStyle = 'rgba(244, 239, 230, 0.55)';
+            ctx.font = '500 12px "JetBrains Mono", ui-monospace, monospace';
+            ctx.fillText('PRESS ESC TO RETURN TO THE DECK', W/2, H/2 + 22);
+          }
+        }
+
+        function loop() {
+          update();
+          draw();
+          raf = requestAnimationFrame(loop);
+        }
+        raf = requestAnimationFrame(loop);
+      }
+    })();
+  </script>
 </body>
 </html>
