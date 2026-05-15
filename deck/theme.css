@@ -2571,7 +2571,14 @@ section.plan-condensed .plan-condensed-fig .figure-caption {
 .zzap-party .zp-ball svg {
   width: 100%;
   height: 100%;
-  animation: zp-ball-spin 5s linear infinite;
+  display: block;
+}
+/* Only the mirror facets rotate — the specular highlight and rim
+   shading stay fixed, like a real disco ball under a stationary light. */
+.zzap-party .zp-ball svg .zp-tile-spin {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: zp-tile-spin 5.5s linear infinite;
 }
 @keyframes zp-ball-drop {
   0%   { transform: translate(-50%, -120%); }
@@ -2579,7 +2586,7 @@ section.plan-condensed .plan-condensed-fig .figure-caption {
   85%  { transform: translate(-50%,   -2%); }
   100% { transform: translate(-50%,    0); }
 }
-@keyframes zp-ball-spin {
+@keyframes zp-tile-spin {
   to { transform: rotate(360deg); }
 }
 @keyframes zp-ball-sway {
@@ -2683,9 +2690,9 @@ section.plan-condensed .plan-condensed-fig .figure-caption {
 @media (prefers-reduced-motion: reduce) {
   .zzap-party .zp-bg          { animation-duration: 28s !important; opacity: 0.18; }
   .zzap-party .zp-spot        { animation-duration: 30s !important; opacity: 0.45; }
-  .zzap-party .zp-ball-wrap   { animation: none !important; transform: translate(-50%, 0); }
-  .zzap-party .zp-ball        { animation: none !important; }
-  .zzap-party .zp-ball svg    { animation-duration: 12s !important; }
+  .zzap-party .zp-ball-wrap          { animation: none !important; transform: translate(-50%, 0); }
+  .zzap-party .zp-ball               { animation: none !important; }
+  .zzap-party .zp-ball svg .zp-tile-spin { animation-duration: 14s !important; }
   .zzap-party .zp-strobe      { display: none; }
   .zzap-party .zp-drop        { animation-duration: 7s !important; }
   .zzap-party .zp-badge       { animation: none !important; }

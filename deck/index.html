@@ -1039,20 +1039,48 @@
           <div class="zp-ball-wrap">
             <div class="zp-string"></div>
             <div class="zp-ball">
-              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <defs>
-                  <radialGradient id="zpball" cx="35%" cy="28%">
-                    <stop offset="0%"  stop-color="#ffffff" stop-opacity="0.98"/>
-                    <stop offset="40%" stop-color="#9ec0ff"/>
-                    <stop offset="100%" stop-color="#0a1f4d"/>
+                  <!-- Sphere base shading: highlight upper-left, deep shadow lower-right -->
+                  <radialGradient id="zp-globe" cx="32%" cy="28%">
+                    <stop offset="0%"   stop-color="#ffffff"/>
+                    <stop offset="42%"  stop-color="#a6c4f5"/>
+                    <stop offset="100%" stop-color="#0e2143"/>
                   </radialGradient>
-                  <pattern id="zpgrid" width="9" height="9" patternUnits="userSpaceOnUse">
-                    <path d="M0 0 H9 M0 0 V9" stroke="rgba(255,255,255,0.22)" stroke-width="0.6"/>
+                  <!-- 3D shadow overlay: transparent at the lit side, dark at the rim -->
+                  <radialGradient id="zp-shade" cx="32%" cy="28%">
+                    <stop offset="0%"   stop-color="rgba(255,255,255,0)"/>
+                    <stop offset="68%"  stop-color="rgba(0,0,0,0)"/>
+                    <stop offset="100%" stop-color="rgba(0,0,0,0.55)"/>
+                  </radialGradient>
+                  <!-- Mirror facets: 2x2 tile of bright/blue/dark mirrors with thin gutter -->
+                  <pattern id="zp-tiles" width="9" height="9" patternUnits="userSpaceOnUse">
+                    <rect width="9" height="9" fill="rgba(5,10,28,0.78)"/>
+                    <rect x="0.6" y="0.6" width="3.4" height="3.4" fill="#ffffff"/>
+                    <rect x="5.0" y="0.6" width="3.4" height="3.4" fill="#7aa8ff"/>
+                    <rect x="0.6" y="5.0" width="3.4" height="3.4" fill="#2c5fa8"/>
+                    <rect x="5.0" y="5.0" width="3.4" height="3.4" fill="#e6efff"/>
                   </pattern>
+                  <clipPath id="zp-clip">
+                    <circle cx="60" cy="60" r="54"/>
+                  </clipPath>
                 </defs>
-                <circle cx="50" cy="50" r="48" fill="url(#zpball)"/>
-                <circle cx="50" cy="50" r="48" fill="url(#zpgrid)"/>
-                <ellipse cx="36" cy="30" rx="14" ry="9" fill="rgba(255,255,255,0.55)"/>
+                <g clip-path="url(#zp-clip)">
+                  <!-- Base sphere fill -->
+                  <circle cx="60" cy="60" r="54" fill="url(#zp-globe)"/>
+                  <!-- Mirror tile layer — rotates inside the sphere -->
+                  <g class="zp-tile-spin">
+                    <rect x="-30" y="-30" width="180" height="180" fill="url(#zp-tiles)" opacity="0.62"/>
+                  </g>
+                  <!-- Rim shading overlay (stationary) -->
+                  <circle cx="60" cy="60" r="54" fill="url(#zp-shade)"/>
+                  <!-- Specular highlight (stationary — light source doesn't move with the ball) -->
+                  <ellipse cx="42" cy="34" rx="13" ry="8" fill="rgba(255,255,255,0.42)"/>
+                  <ellipse cx="40" cy="31" rx="5.5" ry="3" fill="rgba(255,255,255,0.92)"/>
+                </g>
+                <!-- Mounting cap where the string attaches -->
+                <rect x="54" y="2" width="12" height="6" fill="#161b22" rx="0.6"/>
+                <rect x="56.5" y="5" width="7" height="2" fill="#0b0f14"/>
               </svg>
             </div>
           </div>
