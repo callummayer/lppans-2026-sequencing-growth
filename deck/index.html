@@ -1041,15 +1041,16 @@
             <div class="zp-ball">
               <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <defs>
-                  <!-- Silver sphere shading: white highlight at upper-left,
-                       through pale silver to mid-dark gray at the far rim.
-                       Avoids near-black so the ball reads as lit chrome,
-                       not a shadow. -->
+                  <!-- Chrome silver shading: white highlight, through cool
+                       silver-blue mids, to a slightly cool darker rim. The
+                       blue bias in every stop is what reads as "silver"
+                       rather than "gray" — neutral grays look like asphalt,
+                       silver needs a cool/specular cast. -->
                   <radialGradient id="zp-globe" cx="32%" cy="28%">
                     <stop offset="0%"   stop-color="#ffffff"/>
-                    <stop offset="24%"  stop-color="#f2f5f8"/>
-                    <stop offset="58%"  stop-color="#b8bfc9"/>
-                    <stop offset="100%" stop-color="#5e6671"/>
+                    <stop offset="22%"  stop-color="#f4f7fc"/>
+                    <stop offset="55%"  stop-color="#bcc7d7"/>
+                    <stop offset="100%" stop-color="#697485"/>
                   </radialGradient>
                   <!-- Rim shadow on top of the facets — gentle, so the
                        ball reads as a sphere without going to charcoal. -->
