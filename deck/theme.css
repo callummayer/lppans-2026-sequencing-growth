@@ -2233,23 +2233,65 @@ section.hierarchy .hierarchy-swoop {
   height: 78px;
   overflow: visible;
 }
-section.hierarchy .hierarchy-swoop-label {
-  margin: 14px 0 0;
-  font-family: var(--font-mono);
-  font-size: 0.42em;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  text-align: center;
-}
-
 /* Schematic image modifier — show full image without cropping.
    Used on the public-land slide where the map's legend + extent
-   need to be fully visible (no object-fit:cover crop). */
+   need to be fully visible (no object-fit:cover crop).
+   max-height tuned to keep the trap/move text below it in-frame. */
 section.challenge figure.schematic img.fit-contain {
-  max-height: 360px;
+  max-height: 240px;
   object-fit: contain;
   object-position: center;
   background: transparent;
+}
+section.challenge .challenge-with-figure:has(img.fit-contain) {
+  margin-top: 0.4em;
+  margin-bottom: 0.2em;
+}
+section.challenge:has(img.fit-contain) .challenge-strategy {
+  margin-top: 0.5em;
+}
+
+/* ============================================================
+   TITLE — LPPANS conference logo (top-right of cover)
+   ============================================================ */
+section.title .title-conf-logo {
+  position: absolute;
+  top: 44px;
+  right: 80px;
+  height: 38px;
+  width: auto;
+  z-index: 3;
+  opacity: 0;
+  filter: brightness(0) invert(1);
+  animation: fade-up 0.7s var(--ease) forwards 1.15s;
+}
+
+/* ============================================================
+   ORIGINAL PLAN AREA CONDENSED — figure-anchored slide
+   ============================================================ */
+section.plan-condensed {
+  justify-content: flex-start !important;
+  padding-top: 110px;
+}
+section.plan-condensed .rule-top h2 {
+  font-size: 1.3em;
+  margin-bottom: 0;
+}
+section.plan-condensed .plan-condensed-fig {
+  margin: 30px 0 0;
+  text-align: center;
+}
+section.plan-condensed .plan-condensed-fig img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 880px;
+  max-height: 440px;
+  object-fit: contain;
+  border: none;
+}
+section.plan-condensed .plan-condensed-fig .figure-caption {
+  margin-top: 14px;
+  font-size: 0.42em;
+  text-align: left;
 }
