@@ -948,29 +948,47 @@
   </script>
 
   <!-- ============================================================
-       EASTER EGG — type 'zzap' anywhere to fire a burst of zzap
-       wordmarks out from the cursor with a quick accent-color wash.
-       Lasts ~3 seconds, doesn't take over the deck. Stackable.
+       EASTER EGG — type 'zzap' anywhere to toggle PARTY MODE:
+       cursor burst + disco ball drop + rainbow background +
+       drifting spotlights + raining zzap wordmarks + soft strobe.
+       Type 'zzap' again or hit ESC to exit. Persists across slide
+       changes. Pointer-events stay off so slide nav still works.
        ============================================================ -->
   <script>
     (function() {
       const TRIGGER = 'zzap';
       let buffer = '';
-      const last = { x: window.innerWidth / 2, y: window.innerHeight / 2, seen: false };
+      let partying = false;
+      let partyEl = null;
+      let rainTimer = null;
+      const last = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 
       document.addEventListener('pointermove', (e) => {
-        last.x = e.clientX; last.y = e.clientY; last.seen = true;
+        last.x = e.clientX; last.y = e.clientY;
       }, { passive: true });
 
+      // Capture phase so we can stop the trigger keystroke from also reaching
+      // Reveal — without that, the final 'p' in "zzap" would navigate the
+      // deck back at the same moment the party fires.
       document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && partying) {
+          e.preventDefault(); e.stopPropagation();
+          stopParty();
+          return;
+        }
         const t = e.target;
         if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
         if (e.key.length !== 1 || !/[a-z]/i.test(e.key)) { buffer = ''; return; }
         buffer = (buffer + e.key.toLowerCase()).slice(-TRIGGER.length);
-        if (buffer === TRIGGER) { buffer = ''; fire(last.x, last.y); }
-      });
+        if (buffer === TRIGGER) {
+          e.preventDefault(); e.stopPropagation();
+          buffer = '';
+          partying ? stopParty() : startParty();
+        }
+      }, { capture: true });
 
-      function fire(cx, cy) {
+      // ---- Cursor burst (kept from the previous easter egg) ----
+      function fireBurst(cx, cy) {
         const root = document.createElement('div');
         root.className = 'zzap-burst';
         root.style.setProperty('--cx', cx + 'px');
@@ -987,7 +1005,6 @@
           p.textContent = 'zzap';
           const angle = (i / PARTICLES) * Math.PI * 2 + (Math.random() - 0.5) * 0.6;
           const dist = 220 + Math.random() * 360;
-          // Bias the burst upward so wordmarks float up like sparks rather than fall
           const dx = Math.cos(angle) * dist;
           const dy = Math.sin(angle) * dist - 140;
           const rot = (Math.random() - 0.5) * 540;
@@ -1004,8 +1021,92 @@
         }
 
         document.body.appendChild(root);
-        // Hold long enough for the slowest particle (1.6+1.4) + delay (0.12) to finish
         setTimeout(() => root.remove(), 3400);
+      }
+
+      // ---- Persistent party scaffolding ----
+      function startParty() {
+        partying = true;
+        fireBurst(last.x, last.y); // opening flourish from wherever the cursor is
+
+        partyEl = document.createElement('div');
+        partyEl.className = 'zzap-party';
+        partyEl.innerHTML = `
+          <div class="zp-bg"></div>
+          <div class="zp-spots">
+            ${Array.from({length: 8}, (_, i) => '<div class="zp-spot zp-spot-' + (i + 1) + '"></div>').join('')}
+          </div>
+          <div class="zp-ball-wrap">
+            <div class="zp-string"></div>
+            <div class="zp-ball">
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <radialGradient id="zpball" cx="35%" cy="28%">
+                    <stop offset="0%"  stop-color="#ffffff" stop-opacity="0.98"/>
+                    <stop offset="40%" stop-color="#9ec0ff"/>
+                    <stop offset="100%" stop-color="#0a1f4d"/>
+                  </radialGradient>
+                  <pattern id="zpgrid" width="9" height="9" patternUnits="userSpaceOnUse">
+                    <path d="M0 0 H9 M0 0 V9" stroke="rgba(255,255,255,0.22)" stroke-width="0.6"/>
+                  </pattern>
+                </defs>
+                <circle cx="50" cy="50" r="48" fill="url(#zpball)"/>
+                <circle cx="50" cy="50" r="48" fill="url(#zpgrid)"/>
+                <ellipse cx="36" cy="30" rx="14" ry="9" fill="rgba(255,255,255,0.55)"/>
+              </svg>
+            </div>
+          </div>
+          <div class="zp-rain"></div>
+          <div class="zp-strobe"></div>
+          <div class="zp-badge">
+            <span class="zp-badge-dot"></span>
+            ZZAP NIGHTCLUB · PARTY MODE
+            <span class="zp-badge-hint">type ZZAP or ESC to exit</span>
+          </div>
+        `;
+        document.body.appendChild(partyEl);
+        requestAnimationFrame(() => partyEl.classList.add('zp-on'));
+
+        // Continuously rain zzap wordmarks for as long as the party runs
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        rainTimer = setInterval(spawnRaindrop, reduceMotion ? 700 : 260);
+      }
+
+      function stopParty() {
+        partying = false;
+        if (rainTimer) clearInterval(rainTimer);
+        rainTimer = null;
+        if (partyEl) {
+          const el = partyEl;
+          el.classList.remove('zp-on');
+          el.classList.add('zp-off');
+          setTimeout(() => el.remove(), 700);
+          partyEl = null;
+        }
+      }
+
+      function spawnRaindrop() {
+        if (!partyEl) return;
+        const rain = partyEl.querySelector('.zp-rain');
+        if (!rain) return;
+        const drop = document.createElement('span');
+        drop.className = 'zp-drop';
+        const variants = ['zp-drop-blue', 'zp-drop-cream', 'zp-drop-magenta', 'zp-drop-lime', 'zp-drop-amber'];
+        drop.classList.add(variants[Math.floor(Math.random() * variants.length)]);
+        drop.textContent = 'zzap';
+        const x = Math.random() * 100;
+        const dur = 3.4 + Math.random() * 3.0;
+        const delay = Math.random() * 0.25;
+        const scale = 0.55 + Math.random() * 1.5;
+        const rot = (Math.random() - 0.5) * 90;
+        drop.style.cssText =
+          'left:' + x.toFixed(2) + 'vw;' +
+          'animation-duration:' + dur.toFixed(2) + 's;' +
+          'animation-delay:' + delay.toFixed(2) + 's;' +
+          '--scale:' + scale.toFixed(2) + ';' +
+          '--rot:' + rot.toFixed(1) + 'deg;';
+        rain.appendChild(drop);
+        setTimeout(() => drop.remove(), (dur + delay) * 1000 + 200);
       }
     })();
   </script>
