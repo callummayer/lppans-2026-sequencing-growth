@@ -2233,22 +2233,50 @@ section.hierarchy .hierarchy-swoop {
   height: 78px;
   overflow: visible;
 }
-/* Schematic image modifier — show full image without cropping.
-   Used on the public-land slide where the map's legend + extent
-   need to be fully visible (no object-fit:cover crop).
-   max-height tuned to keep the trap/move text below it in-frame. */
-section.challenge figure.schematic img.fit-contain {
-  max-height: 240px;
+/* ============================================================
+   PUBLIC LAND — image-left, strategy-stacked-right layout
+   The map needs to be large enough to read the hatched parcels;
+   the trap/move pair stacks vertically alongside instead of below.
+   ============================================================ */
+section.challenge .public-land-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 44px;
+  align-items: center;
+  margin-top: 0.8em;
+}
+section.challenge .public-land-grid .challenge-with-figure {
+  margin: 0;
+}
+section.challenge .public-land-grid figure.schematic img.fit-contain {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
   object-fit: contain;
   object-position: center;
   background: transparent;
 }
-section.challenge .challenge-with-figure:has(img.fit-contain) {
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
+section.challenge .public-land-grid figure.schematic .figure-caption {
+  margin-top: 10px;
+  font-size: 0.4em;
 }
-section.challenge:has(img.fit-contain) .challenge-strategy {
-  margin-top: 0.5em;
+section.challenge .public-land-grid .challenge-strategy.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 0;
+}
+section.challenge .public-land-grid .challenge-strategy.stack h3 {
+  font-size: 0.55em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--zzap-slate);
+  margin: 0 0 0.4em;
+}
+section.challenge .public-land-grid .challenge-strategy.stack h2 {
+  font-size: 1.05em;
+  line-height: 1.1;
+  margin: 0;
 }
 
 /* ============================================================
