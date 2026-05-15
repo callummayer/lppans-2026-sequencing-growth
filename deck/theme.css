@@ -2541,23 +2541,30 @@ section.plan-condensed .plan-condensed-fig .figure-caption {
 @keyframes zp-spot-g { 0%,100% { transform: translate( 50vw, 85vh); } 50% { transform: translate( 50vw,  5vh); } }
 @keyframes zp-spot-h { 0%,100% { transform: translate(  5vw, 45vh); } 50% { transform: translate( 85vw, 55vh); } }
 
-/* --- Disco ball — drops from above, hangs, rotates --- */
+/* --- Disco ball — hangs from a string anchored above the viewport.
+   The wrap sits at top: -10vh so ~10vh of string is clipped off-screen
+   above; the string itself is 24vh, so its visible portion runs from the
+   top of the slide down ~14vh before reaching the ball. The ball settles
+   in the upper third of the slide. --- */
 .zzap-party .zp-ball-wrap {
   position: absolute;
-  top: 0;
+  top: -10vh;
   left: 50%;
   transform: translateX(-50%);
   width: 110px;
-  height: calc(8vh + 110px);
+  height: calc(24vh + 110px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: zp-ball-drop 1.1s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation: zp-ball-drop 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 .zzap-party .zp-string {
   width: 1px;
-  height: 8vh;
-  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.35));
+  height: 24vh;
+  background: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0.42) 0%,
+    rgba(255, 255, 255, 0.55) 100%);
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.25);
 }
 .zzap-party .zp-ball {
   width: 110px;
@@ -2573,12 +2580,11 @@ section.plan-condensed .plan-condensed-fig .figure-caption {
   height: 100%;
   display: block;
 }
-/* Only the mirror facets rotate — the rim shadow and sparkle glints
-   stay fixed, like a real disco ball under a stationary light. */
+/* Mirror facets translate horizontally to simulate the ball rotating
+   on a vertical axis (like a real disco ball, not a spinning pancake).
+   The tile pattern is 13px wide; a 26px slide loops seamlessly. */
 .zzap-party .zp-ball svg .zp-tile-spin {
-  transform-origin: center;
-  transform-box: fill-box;
-  animation: zp-tile-spin 5.5s linear infinite;
+  animation: zp-tile-spin 4.2s linear infinite;
 }
 /* Sparkle glints — bright dots that twinkle out of phase to suggest
    mirror tiles catching the room light as the ball turns. */
@@ -2596,13 +2602,14 @@ section.plan-condensed .plan-condensed-fig .figure-caption {
   50%      { opacity: 1;    transform: scale(1.15); }
 }
 @keyframes zp-ball-drop {
-  0%   { transform: translate(-50%, -120%); }
-  70%  { transform: translate(-50%,    4%); }
-  85%  { transform: translate(-50%,   -2%); }
+  0%   { transform: translate(-50%, -180%); }
+  70%  { transform: translate(-50%,    2.5%); }
+  85%  { transform: translate(-50%,   -1.2%); }
   100% { transform: translate(-50%,    0); }
 }
 @keyframes zp-tile-spin {
-  to { transform: rotate(360deg); }
+  from { transform: translateX(-26px); }
+  to   { transform: translateX(0); }
 }
 @keyframes zp-ball-sway {
   from { transform: rotate(-2.2deg); }
@@ -2701,15 +2708,81 @@ section.plan-condensed .plan-condensed-fig .figure-caption {
   to   { opacity: 1;    }
 }
 
+/* --- Dartmouth geese — a flock of honkers passing through, because
+   the goose is the unofficial symbol of K'jipuktuk / Dartmouth. Each
+   goose has its own speed, altitude, and direction; the ones flying
+   right-to-left are flipped via scaleX(-1). A gentle vertical bob is
+   layered into the keyframes so they don't track perfectly flat. --- */
+.zzap-party .zp-flock {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.zzap-party .zp-goose {
+  position: absolute;
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.45));
+  user-select: none;
+  -webkit-user-select: none;
+  will-change: transform, left;
+}
+.zzap-party .zp-goose-1 {
+  top: 10%; font-size: 44px;
+  animation: zp-goose-fly-r 19s linear infinite;
+  animation-delay: -3s;
+}
+.zzap-party .zp-goose-2 {
+  top: 22%; font-size: 34px;
+  animation: zp-goose-fly-l 14s linear infinite;
+  animation-delay: -7s;
+}
+.zzap-party .zp-goose-3 {
+  top: 38%; font-size: 54px;
+  animation: zp-goose-fly-r 23s linear infinite;
+  animation-delay: -12s;
+}
+.zzap-party .zp-goose-4 {
+  top: 56%; font-size: 38px;
+  animation: zp-goose-fly-l 16s linear infinite;
+  animation-delay: -2s;
+}
+.zzap-party .zp-goose-5 {
+  top: 72%; font-size: 48px;
+  animation: zp-goose-fly-r 21s linear infinite;
+  animation-delay: -9s;
+}
+.zzap-party .zp-goose-6 {
+  top: 87%; font-size: 32px;
+  animation: zp-goose-fly-l 12s linear infinite;
+  animation-delay: -5s;
+}
+@keyframes zp-goose-fly-r {
+  0%   { left: -12%; transform: translateY(0); }
+  20%  {             transform: translateY(-10px); }
+  40%  {             transform: translateY(2px); }
+  60%  {             transform: translateY(-7px); }
+  80%  {             transform: translateY(4px); }
+  100% { left: 112%; transform: translateY(0); }
+}
+@keyframes zp-goose-fly-l {
+  0%   { left: 112%; transform: scaleX(-1) translateY(0); }
+  20%  {             transform: scaleX(-1) translateY(-8px); }
+  40%  {             transform: scaleX(-1) translateY(3px); }
+  60%  {             transform: scaleX(-1) translateY(-12px); }
+  80%  {             transform: scaleX(-1) translateY(2px); }
+  100% { left: -12%; transform: scaleX(-1) translateY(0); }
+}
+
 /* --- Reduced motion: keep the vibe but cut the harshness --- */
 @media (prefers-reduced-motion: reduce) {
   .zzap-party .zp-bg          { animation-duration: 28s !important; opacity: 0.18; }
   .zzap-party .zp-spot        { animation-duration: 30s !important; opacity: 0.45; }
   .zzap-party .zp-ball-wrap          { animation: none !important; transform: translate(-50%, 0); }
   .zzap-party .zp-ball               { animation: none !important; }
-  .zzap-party .zp-ball svg .zp-tile-spin { animation-duration: 14s !important; }
+  .zzap-party .zp-ball svg .zp-tile-spin { animation-duration: 12s !important; }
   .zzap-party .zp-strobe      { display: none; }
   .zzap-party .zp-drop        { animation-duration: 7s !important; }
   .zzap-party .zp-badge       { animation: none !important; }
   .zzap-party .zp-badge-dot   { animation-duration: 1.4s !important; }
+  .zzap-party .zp-goose       { animation-duration: 45s !important; }
 }

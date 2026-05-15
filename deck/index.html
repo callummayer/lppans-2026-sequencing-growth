@@ -1041,29 +1041,29 @@
             <div class="zp-ball">
               <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <defs>
-                  <!-- Sphere shading: white highlight at upper-left, deep navy at the far rim. -->
+                  <!-- Silver sphere shading: white highlight at upper-left,
+                       through pale silver, mid silver, to near-black at the
+                       far rim. No blue tint — disco balls are mirrored silver. -->
                   <radialGradient id="zp-globe" cx="32%" cy="28%">
                     <stop offset="0%"   stop-color="#ffffff"/>
-                    <stop offset="35%"  stop-color="#d8e6fa"/>
-                    <stop offset="72%"  stop-color="#3a6cb0"/>
-                    <stop offset="100%" stop-color="#091230"/>
+                    <stop offset="32%"  stop-color="#eef1f5"/>
+                    <stop offset="62%"  stop-color="#9aa1ab"/>
+                    <stop offset="100%" stop-color="#0c0e12"/>
                   </radialGradient>
                   <!-- Rim shadow on top of the facets, so the ball reads as a sphere. -->
                   <radialGradient id="zp-rim" cx="35%" cy="32%">
                     <stop offset="0%"   stop-color="rgba(0,0,0,0)"/>
-                    <stop offset="60%"  stop-color="rgba(0,0,0,0)"/>
-                    <stop offset="100%" stop-color="rgba(0,0,0,0.78)"/>
+                    <stop offset="58%"  stop-color="rgba(0,0,0,0)"/>
+                    <stop offset="100%" stop-color="rgba(0,0,0,0.82)"/>
                   </radialGradient>
-                  <!-- Mirror facet grid: dark gutters with bright translucent tiles.
-                       Translucent fills mean the sphere shading shows through each
-                       tile, so facets near the highlight read bright and facets
-                       near the rim read dark — like real mirrored tiles. -->
+                  <!-- Mirror facets: dark gutters with bright translucent tiles
+                       so the silver sphere shading shows through each one. -->
                   <pattern id="zp-grid" width="13" height="13" patternUnits="userSpaceOnUse">
-                    <rect width="13" height="13" fill="#02060f"/>
-                    <rect x="0.7" y="0.7" width="5.2" height="5.2" fill="rgba(255,255,255,0.62)"/>
-                    <rect x="7.1" y="0.7" width="5.2" height="5.2" fill="rgba(255,255,255,0.62)"/>
-                    <rect x="0.7" y="7.1" width="5.2" height="5.2" fill="rgba(255,255,255,0.62)"/>
-                    <rect x="7.1" y="7.1" width="5.2" height="5.2" fill="rgba(255,255,255,0.62)"/>
+                    <rect width="13" height="13" fill="#040608"/>
+                    <rect x="0.7" y="0.7" width="5.2" height="5.2" fill="rgba(255,255,255,0.68)"/>
+                    <rect x="7.1" y="0.7" width="5.2" height="5.2" fill="rgba(255,255,255,0.68)"/>
+                    <rect x="0.7" y="7.1" width="5.2" height="5.2" fill="rgba(255,255,255,0.68)"/>
+                    <rect x="7.1" y="7.1" width="5.2" height="5.2" fill="rgba(255,255,255,0.68)"/>
                   </pattern>
                   <clipPath id="zp-clip">
                     <circle cx="60" cy="60" r="55"/>
@@ -1073,9 +1073,12 @@
                 <g clip-path="url(#zp-clip)">
                   <!-- Sphere base — provides 3D shading that shows through every facet -->
                   <circle cx="60" cy="60" r="55" fill="url(#zp-globe)"/>
-                  <!-- Mirror tile layer — rotates inside the sphere -->
+                  <!-- Mirror tile layer — translates horizontally to simulate
+                       the ball rotating on a vertical axis (like a real disco
+                       ball, not a spinning pancake). Pattern is 13px wide so
+                       a 26px slide loops seamlessly. -->
                   <g class="zp-tile-spin">
-                    <rect x="-30" y="-30" width="180" height="180" fill="url(#zp-grid)"/>
+                    <rect x="-40" y="-30" width="200" height="180" fill="url(#zp-grid)"/>
                   </g>
                   <!-- Rim shadow (stationary, on top of facets) -->
                   <circle cx="60" cy="60" r="55" fill="url(#zp-rim)"/>
@@ -1091,6 +1094,16 @@
                 <rect x="56.5" y="5" width="7" height="2" fill="#0b0f14"/>
               </svg>
             </div>
+          </div>
+          <!-- Goose flock — Dartmouth's unofficial mascot crashing the party.
+               Five geese on independent paths and speeds. -->
+          <div class="zp-flock">
+            <span class="zp-goose zp-goose-1" aria-hidden="true">🪿</span>
+            <span class="zp-goose zp-goose-2" aria-hidden="true">🪿</span>
+            <span class="zp-goose zp-goose-3" aria-hidden="true">🪿</span>
+            <span class="zp-goose zp-goose-4" aria-hidden="true">🪿</span>
+            <span class="zp-goose zp-goose-5" aria-hidden="true">🪿</span>
+            <span class="zp-goose zp-goose-6" aria-hidden="true">🪿</span>
           </div>
           <div class="zp-rain"></div>
           <div class="zp-strobe"></div>
